@@ -504,6 +504,10 @@
 }
 
 /* Gate page – after word search, before Part 1 content */
+.note--gate .note__title {
+  font-size: clamp(1.85rem, 5.5vmin, 3.25rem);
+}
+
 .note--gate .note__gate-body {
   flex: 1;
   display: flex;
