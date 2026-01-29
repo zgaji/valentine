@@ -1,0 +1,1550 @@
+/* ============================================
+   Homepage – cream background + blurred hearts
+   ============================================ */
+
+.homepage {
+  --bg-cream: #fdfbe5;
+  --heart-pink: #e8a4b8;
+  min-height: 100vh;
+  background-color: var(--bg-cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.hearts-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  color: var(--heart-pink);
+  filter: blur(60px);
+}
+
+/* Large central heart */
+.heart--large {
+  width: min(70vmin, 420px);
+  height: min(70vmin, 420px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(80px);
+}
+
+/* Small hearts */
+.heart--small {
+  width: min(18vmin, 100px);
+  height: min(18vmin, 100px);
+  filter: blur(50px);
+}
+
+.heart--top-left {
+  left: 2%;
+  top: 3%;
+}
+
+.heart--top-right {
+  right: 2%;
+  top: 3%;
+  left: auto;
+}
+
+.heart--bottom-left {
+  left: 2%;
+  bottom: 5%;
+  top: auto;
+}
+
+.heart--bottom-right {
+  right: 2%;
+  bottom: 5%;
+  left: auto;
+  top: auto;
+}
+
+.heart--left-mid {
+  left: -2%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(14vmin, 80px);
+  height: min(14vmin, 80px);
+}
+
+/* Blurred floating hearts – gentle drift */
+@keyframes heart-float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(8px, -12px);
+  }
+  50% {
+    transform: translate(-5px, -20px);
+  }
+  75% {
+    transform: translate(10px, -10px);
+  }
+}
+
+.heart--float {
+  filter: blur(3px) drop-shadow(0 0 12px rgba(255, 75, 129, 0.6));
+  animation: heart-float 12s ease-in-out infinite;
+  color: #f1a5bc;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heart--float {
+    animation: none;
+  }
+}
+
+.heart--float-1 { left: 12%;  top: 18%;  animation-duration: 14s; animation-delay: 0s; }
+.heart--float-2 { left: 75%;  top: 25%;  animation-duration: 11s; animation-delay: -2s; }
+.heart--float-3 { left: 45%;  top: 8%;  animation-duration: 16s; animation-delay: -4s; }
+.heart--float-4 { left: 8%;  top: 65%;  animation-duration: 10s; animation-delay: -1s; }
+.heart--float-5 { left: 82%;  top: 70%;  animation-duration: 13s; animation-delay: -3s; }
+.heart--float-6 { left: 25%;  top: 80%;  animation-duration: 15s; animation-delay: -5s; }
+.heart--float-7 { left: 65%;  top: 55%;  animation-duration: 11s; animation-delay: -2.5s; }
+.heart--float-8 { left: 55%;  top: 85%;  animation-duration: 14s; animation-delay: -6s; }
+
+/* Size overrides for floating hearts – big enough to read as hearts */
+.heart--float { width: auto; height: auto; }
+.heart--float-1 { width: min(14vmin, 88px);  height: min(14vmin, 88px); }
+.heart--float-2 { width: min(12vmin, 72px);  height: min(12vmin, 72px); }
+.heart--float-3 { width: min(16vmin, 100px); height: min(16vmin, 100px); }
+.heart--float-4 { width: min(10vmin, 58px);  height: min(10vmin, 58px); }
+.heart--float-5 { width: min(13vmin, 80px);  height: min(13vmin, 80px); }
+.heart--float-6 { width: min(11vmin, 68px);  height: min(11vmin, 68px); }
+.heart--float-7 { width: min(12vmin, 75px);  height: min(12vmin, 75px); }
+.heart--float-8 { width: min(9vmin, 52px);   height: min(9vmin, 52px); }
+
+.homepage__content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+}
+
+.homepage__content--step2 {
+  cursor: default;
+}
+
+/* ============================================
+   Intro: “Happy Valentines Day” zoom-in
+   ============================================ */
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+  padding: 0 1.25rem;
+  max-width: 96%;
+  width: 100%;
+}
+
+.intro--envelopes {
+  gap: 0;
+  max-width: 100%;
+  padding: 0;
+}
+
+.intro--step2 {
+  gap: 1.25rem;
+}
+
+.intro__title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+}
+
+.intro__heading {
+  margin: 0;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3rem, 12vmin, 6.5rem);
+  font-weight: 400;
+  color: #c45c7a;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  transform-origin: center;
+  animation: intro-zoom 1.8s ease-out forwards;
+}
+
+.intro__name {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3rem, 12vmin, 6.5rem);
+  font-weight: 400;
+  color: #c45c7a;
+  letter-spacing: 0.02em;
+  animation: intro-zoom 1.8s ease-out forwards;
+}
+
+.intro__heading--step2 {
+  font-size: clamp(1.85rem, 6.5vmin, 3.5rem);
+  animation: intro-step2-appear 0.6s ease-out forwards;
+}
+
+@keyframes intro-step2-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes intro-zoom {
+  0% {
+    transform: scale(0.25);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro__heading,
+  .intro__name {
+    animation: intro-zoom-reduced 0.5s ease-out forwards;
+  }
+  .intro__heading--step2 {
+    animation: intro-step2-appear-reduced 0.4s ease-out forwards;
+  }
+}
+
+@keyframes intro-step2-appear-reduced {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes intro-zoom-reduced {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* ============================================
+   Heart-shaped “Yes” button (step 2)
+   ============================================ */
+
+.heart-btn {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  animation: heart-btn-appear 0.5s ease-out forwards;
+}
+
+.heart-btn__svg {
+  display: block;
+  width: min(14vmin, 88px);
+  height: min(14vmin, 88px);
+  filter: drop-shadow(0 3px 10px rgba(200, 90, 120, 0.35)) drop-shadow(0 1px 3px rgba(180, 70, 100, 0.2));
+  transition: filter 0.25s ease, transform 0.25s ease;
+  transform-origin: center;
+}
+
+.heart-btn:hover .heart-btn__svg {
+  filter: drop-shadow(0 5px 14px rgba(200, 90, 120, 0.45)) drop-shadow(0 2px 5px rgba(180, 70, 100, 0.25)) brightness(1.06);
+  transform: scale(1.08);
+}
+
+.heart-btn:focus-visible {
+  outline: 2px solid #d85a78;
+  outline-offset: 4px;
+  border-radius: 50%;
+}
+
+.heart-btn__text {
+  fill: #fff;
+  font-size: 5px;
+  font-weight: 700;
+  font-family: system-ui, -apple-system, sans-serif;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  pointer-events: none;
+}
+
+@keyframes heart-btn-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   Two envelopes (after Yes) – lid/body/letter, click to open
+   ============================================ */
+
+
+.envelopes-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.envelopes-section--exiting {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+  visibility: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.back-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 1rem;
+  background: transparent;
+  animation: back-page-in 0.4s ease-out forwards;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes back-page-in {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.note {
+  position: relative;
+  width: 90vw;
+  height: min(90vh, 680px);
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fdf6f6;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #8B2E3C;
+  box-shadow: 0 8px 32px rgba(139, 46, 60, 0.12);
+}
+
+.note__border {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  color: #8B2E3C;
+}
+
+.note__back {
+  position: absolute;
+  top: max(1.5rem, 12%);
+  left: max(1.5rem, 12%);
+  z-index: 2;
+}
+
+.note__title {
+  margin: 0;
+  padding: 4rem 2rem 1rem;
+  font-family: 'Homemade Apple', cursive;
+  font-size: clamp(1.5rem, 4.5vmin, 2.5rem);
+  font-weight: 400;
+  color: #8B2E3C;
+  text-align: center;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+.note__title-bold {
+  font-weight: 700;
+}
+
+.note__body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  padding: 0 2rem 2rem;
+}
+
+.note__col {
+  min-width: 0;
+  padding: 0 1rem;
+}
+
+.note__col--left {
+  flex: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 1.35rem;
+}
+
+.note__col--left .note__section-title {
+  align-self: center;
+  text-align: center;
+  width: 100%;
+}
+
+.note__col--right {
+  flex: 0.7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.note__section-title {
+  margin: 0 0 1rem;
+  font-family: 'Homemade Apple', cursive;
+  font-size: clamp(1.1rem, 3vmin, 1.5rem);
+  font-weight: 400;
+  color: #8B2E3C;
+  line-height: 1.3;
+}
+
+.note__activities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1.25rem;
+  align-items: start;
+}
+
+.note__activities-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.note__activities-col--right {
+  padding-top: 3.5rem;
+}
+
+.note__activities-col--right .note__activity {
+  gap: 0.4rem;
+}
+
+.note__activity {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: nowrap;
+  font-family: 'Homemade Apple', cursive;
+  font-size: clamp(0.9rem, 2.5vmin, 1.15rem);
+  color: #8B2E3C;
+  line-height: 1.4;
+}
+
+.note__activity > span:not(.note__activity-icons) {
+  min-width: 0;
+}
+
+.note__activity--icon-right {
+  flex-direction: row-reverse;
+}
+
+.note__activity-icon {
+  width: clamp(44px, 10vmin, 58px);
+  height: clamp(44px, 10vmin, 58px);
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.note__activities-col--right .note__activity-icon {
+  width: clamp(50px, 11vmin, 66px);
+  height: clamp(50px, 11vmin, 66px);
+}
+
+.note__divider {
+  width: 16px;
+  min-height: 120px;
+  flex: 0 0 auto;
+  color: #8B2E3C;
+  opacity: 1;
+  align-self: stretch;
+}
+
+.note__clothes-img {
+  max-width: clamp(120px, 25vmin, 180px);
+  height: auto;
+  object-fit: contain;
+  margin: 0.75rem 0;
+}
+
+.note__comfy {
+  margin: 0.5rem 0 0;
+  font-family: 'Homemade Apple', cursive;
+  font-size: clamp(1.1rem, 3vmin, 1.5rem);
+  font-weight: 400;
+  color: #8B2E3C;
+  text-align: center;
+}
+
+/* Gate page – after word search, before Part 1 content */
+.note--gate .note__gate-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem 2rem;
+}
+
+.note__gate-btn {
+  font-family: 'Homemade Apple', cursive;
+  font-size: clamp(1.25rem, 3.5vmin, 1.75rem);
+  color: #8B2E3C;
+  background: transparent;
+  border: 2px solid #8B2E3C;
+  border-radius: 999px;
+  padding: 0.6rem 1.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.note__gate-btn:hover {
+  background-color: #8B2E3C;
+  color: #fdf6f6;
+}
+
+.note__gate-btn:focus-visible {
+  outline: 2px solid #8B2E3C;
+  outline-offset: 3px;
+}
+
+/* Book page-turn transition (gate → Part 1) */
+.note-page-turn {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1400px;
+}
+
+.note-page-turn .note {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  backface-visibility: hidden;
+}
+
+.note-page-turn__under {
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.note--flip-out {
+  z-index: 1;
+  transform-origin: left center;
+  animation: note-flip-out 0.7s ease-in-out forwards;
+}
+
+@keyframes note-flip-out {
+  from {
+    transform: translate(-50%, -50%) rotateY(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotateY(-180deg);
+  }
+}
+
+/* ============================================
+   Prompt card – "What is your idea?" before Part 1 note
+   ============================================ */
+
+.prompt-card {
+  position: relative;
+  width: 90vw;
+  max-width: 420px;
+  padding: 4rem 1.5rem 1.5rem;
+  background-color: #fdf6f6;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #8B2E3C;
+  box-shadow: 0 8px 32px rgba(139, 46, 60, 0.12);
+}
+
+.prompt-card__border {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  color: #8B2E3C;
+}
+
+.prompt-card__back {
+  position: absolute;
+  top: max(1.5rem, 12%);
+  left: max(1.5rem, 12%);
+  z-index: 2;
+}
+
+.prompt-card__question {
+  margin: 0 0 0.25rem;
+  font-family: 'Homemade Apple', cursive;
+  font-size: clamp(1.25rem, 3.5vmin, 1.75rem);
+  font-weight: 400;
+  color: #8B2E3C;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.prompt-card__hint-static {
+  margin: 0 0 1rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 0.85rem;
+  color: rgba(139, 46, 60, 0.75);
+  text-align: center;
+}
+
+.prompt-card__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.prompt-card__input {
+  width: 100%;
+  max-width: 260px;
+  padding: 0.6em 0.9em;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  color: #8B2E3C;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(139, 46, 60, 0.35);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.prompt-card__input::placeholder {
+  color: rgba(139, 46, 60, 0.5);
+}
+
+.prompt-card__input:focus {
+  border-color: #8B2E3C;
+  box-shadow: 0 0 0 3px rgba(139, 46, 60, 0.15);
+}
+
+.prompt-card__submit {
+  padding: 0.5em 1.25em;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #d85a78, #c45c7a);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 2px 8px rgba(196, 92, 122, 0.35);
+}
+
+.prompt-card__submit:hover {
+  transform: scale(1.04);
+  filter: brightness(1.05);
+}
+
+.prompt-card__submit:focus-visible {
+  outline: 2px solid #8B2E3C;
+  outline-offset: 3px;
+}
+
+.prompt-card__hint {
+  margin: 0.75rem 0 0;
+  font-family: 'Dancing Script', cursive;
+  font-size: 0.8rem;
+  color: #8B2E3C;
+  text-align: center;
+  opacity: 0.85;
+}
+
+/* ============================================
+   Word search card – gate for Part 1
+   ============================================ */
+
+.word-search-card {
+  position: relative;
+  width: 90vw;
+  max-width: 420px;
+  padding: 4rem 1.5rem 1.5rem;
+  background-color: #fdf6f6;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #8B2E3C;
+  box-shadow: 0 8px 32px rgba(139, 46, 60, 0.12);
+}
+
+.word-search-card__border {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  color: #8B2E3C;
+}
+
+.word-search-card__back {
+  position: absolute;
+  top: max(1.5rem, 12%);
+  left: max(1.5rem, 12%);
+  z-index: 2;
+}
+
+.word-search-counter {
+  margin: 0 0 0.5rem;
+  font-family: 'Homemade Apple', cursive;
+  font-size: clamp(1.1rem, 3vmin, 1.4rem);
+  font-weight: 600;
+  color: #8B2E3C;
+  text-align: center;
+}
+
+.word-search-progress {
+  margin: 0 0 1rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1rem, 2.5vmin, 1.25rem);
+  font-weight: 400;
+  color: #8B2E3C;
+  text-align: center;
+  opacity: 0.85;
+}
+
+.word-search-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 2px;
+  max-width:  min(90vw, 320px);
+  margin: 0 auto 1rem;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  -webkit-touch-callout: none;
+}
+
+.word-search-grid--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.word-search-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, sans-serif;
+  font-size: clamp(0.75rem, 2.5vmin, 1rem);
+  font-weight: 600;
+  color: #8B2E3C;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(139, 46, 60, 0.25);
+  border-radius: 4px;
+  cursor: default;
+  min-height: 28px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.word-search-cell--selected {
+  background: rgba(216, 90, 120, 0.25);
+  border-color: #c45c7a;
+}
+
+.word-search-cell--found {
+  background: rgba(196, 92, 122, 0.2);
+  border-color: rgba(139, 46, 60, 0.4);
+  color: #8B2E3C;
+}
+
+.word-search-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.1rem;
+  color: #8B2E3C;
+}
+
+.word-search-word {
+  opacity: 0.7;
+}
+
+.word-search-word--found {
+  opacity: 1;
+  text-decoration: line-through;
+  color: #6b1e2a;
+}
+
+/* ============================================
+   Notification alerts for word search
+   ============================================ */
+
+.notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  animation: notification-appear 0.3s ease-out forwards;
+  pointer-events: none;
+}
+
+.notification__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 3px solid;
+  min-width: 200px;
+  max-width: 90vw;
+}
+
+.notification--correct .notification__content {
+  border-color: #4caf50;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.notification--wrong .notification__content {
+  border-color: #f44336;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.notification__text {
+  margin: 0;
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.25rem, 3.5vmin, 2rem);
+  font-weight: 700;
+  color: #8B2E3C;
+  text-align: center;
+}
+
+.notification--correct .notification__text {
+  color: #4caf50;
+}
+
+.notification--wrong .notification__text {
+  color: #f44336;
+}
+
+.notification__image {
+  max-width: min(200px, 40vw);
+  max-height: min(200px, 40vh);
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   Congratulations overlay when all words found
+   ============================================ */
+
+.congratulations-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10001;
+  animation: congratulations-fade-in 0.5s ease-out forwards;
+}
+
+.congratulations-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 20px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.congratulations-text {
+  margin: 0;
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.75rem, 5vmin, 3rem);
+  font-weight: 700;
+  color: #4caf50;
+  text-align: center;
+}
+
+.tenor-gif-iframe {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  border: none;
+  min-height: 300px;
+}
+
+@keyframes congratulations-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes notification-appear {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notification {
+    animation: none;
+  }
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35em;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #8B2E3C;
+  background: transparent;
+  border: 1.5px solid #8B2E3C;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.back-btn__icon {
+  width: 1rem;
+  height: 1rem;
+  display: block;
+}
+
+.back-btn:hover {
+  transform: scale(1.04);
+  background: rgba(139, 46, 60, 0.08);
+}
+
+.back-btn:focus-visible {
+  outline: 2px solid #8B2E3C;
+  outline-offset: 3px;
+}
+
+.arch-text {
+  width: min(100%, 420px);
+  color: #c45c7a;
+  animation: arch-appear 0.6s ease-out forwards;
+}
+
+@keyframes arch-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.envelopes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Outer: size, tilt, animation – no transform on inner so 3D lids work */
+.envelope-outer {
+  width: min(300px, 85vw);
+  height: min(200px, 57vw);
+  position: relative;
+  filter: drop-shadow(0 4px 14px rgba(180, 120, 140, 0.35));
+  transition: transform 0.35s ease;
+}
+
+.envelope-outer.envelope--1 {
+  transform: rotate(-4deg);
+  animation: envelope-appear-1 0.5s ease-out 0s forwards;
+}
+
+.envelope-outer.envelope--2 {
+  transform: rotate(4deg);
+  animation: envelope-appear-2 0.5s ease-out 0.12s forwards;
+}
+
+.envelope-outer.envelope--1:hover {
+  transform: rotate(-4deg) scale(1.08);
+}
+
+.envelope-outer.envelope--2:hover {
+  transform: rotate(4deg) scale(1.08);
+}
+
+.envelope-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-6deg);
+  z-index: 5;
+  pointer-events: none;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #c45c7a;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+  padding: 0.3em 0.65em;
+  background: rgba(255, 252, 235, 0.92);
+  border: 1px solid rgba(210, 195, 170, 0.5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.envelope--2 .envelope-label {
+  transform: translate(-50%, -50%) rotate(6deg);
+}
+
+/* Part 2 envelope – soft lavender */
+.envelope-outer.envelope--2 .envelope-back {
+  background: #e8dcef;
+}
+.envelope-outer.envelope--2 .envelope-lid--one {
+  border-top-color: #ddd0e8;
+}
+.envelope-outer.envelope--2 .envelope-lid--two {
+  border-top-color: #efe8f5;
+}
+.envelope-outer.envelope--2 .envelope-body {
+  border-right-color: #ddd0e8;
+  border-bottom-color: #ddd0e8;
+  border-left-color: #efe8f5;
+}
+
+.envelope-inner {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+
+/* Inner mechanism: 3D perspective for lids */
+.envelope-mech {
+  position: absolute;
+  inset: 0;
+  perspective: 900px;
+  transform-style: preserve-3d;
+}
+
+/* Back panel: rear of envelope, behind letter */
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  background: #f8e0e8;
+  z-index: 0;
+}
+
+/* Lids: border triangles, hinged at top */
+.envelope-lid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-right: min(150px, 42.5vw) solid transparent;
+  border-bottom: min(100px, 28.5vw) solid transparent;
+  border-left: min(150px, 42.5vw) solid transparent;
+  transform-origin: 50% 0;
+  transition: transform 0.25s linear;
+  backface-visibility: hidden;
+}
+
+/* Closed by default */
+.envelope-inner:not(.envelope--open) .envelope-lid--one {
+  transform: rotateX(0deg);
+  transition-delay: 0.75s;
+}
+
+.envelope-inner:not(.envelope--open) .envelope-lid--two {
+  transform: rotateX(90deg);
+  transition-delay: 0.5s;
+}
+
+.envelope-inner:not(.envelope--open) .envelope-letter {
+  transform: none;
+}
+
+.envelope-lid--one {
+  border-top: min(100px, 28.5vw) solid #f5d0dc;
+  z-index: 3;
+}
+
+.envelope-lid--two {
+  border-top: min(100px, 28.5vw) solid #fadce8;
+  z-index: 1;
+}
+
+.envelope-seal {
+  position: absolute;
+  bottom: min(100px, 28.5vw);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  animation: seal-bob 2.2s ease-in-out infinite;
+}
+
+.envelope-seal svg {
+  filter: drop-shadow(0 1px 2px rgba(180, 80, 100, 0.3));
+}
+
+@keyframes seal-bob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-5px); }
+}
+
+.envelope-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: min(100px, 28.5vw) solid transparent;
+  border-right: min(150px, 42.5vw) solid #f5d0dc;
+  border-bottom: min(100px, 28.5vw) solid #f5d0dc;
+  border-left: min(150px, 42.5vw) solid #fadce8;
+  z-index: 2;
+}
+
+.envelope-letter {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fffefc;
+  border-radius: 12px;
+  z-index: 1;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: #c45c7a;
+  transition: transform 0.5s ease;
+  transition-delay: 0s;
+}
+
+.envelope-letter__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.envelope-letter__heart {
+  font-size: 1.25em;
+}
+
+/* Open on click */
+.envelope-inner.envelope--open .envelope-lid--one {
+  transform: rotateX(90deg);
+  transition-delay: 0s;
+}
+
+.envelope-inner.envelope--open .envelope-lid--two {
+  transform: rotateX(180deg);
+  transition-delay: 0.25s;
+}
+
+.envelope-inner.envelope--open .envelope-letter {
+  transform: translateY(-50px);
+  transition-delay: 0.5s;
+}
+
+@keyframes envelope-appear-1 {
+  0% {
+    opacity: 0;
+    transform: rotate(-4deg) scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-4deg) scale(1);
+  }
+}
+
+@keyframes envelope-appear-2 {
+  0% {
+    opacity: 0;
+    transform: rotate(4deg) scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(4deg) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .envelope-outer.envelope--1 {
+    animation: envelope-appear-reduced 0.4s ease-out 0s forwards;
+  }
+  .envelope-outer.envelope--2 {
+    animation: envelope-appear-reduced 0.4s ease-out 0.1s forwards;
+  }
+  .envelopes-section {
+    transition-duration: 0.2s;
+  }
+  .envelopes-section--exiting {
+    transform: none;
+  }
+  .back-page {
+    animation: none;
+  }
+  .arch-text {
+    animation: none;
+  }
+  .envelope-seal {
+    animation: none;
+  }
+  .envelope-lid,
+  .envelope-letter {
+    transition-duration: 0.2s;
+  }
+  .envelope-outer.envelope--1:hover {
+    transform: rotate(-4deg) scale(1.02);
+  }
+  .envelope-outer.envelope--2:hover {
+    transform: rotate(4deg) scale(1.02);
+  }
+}
+
+@keyframes envelope-appear-reduced {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ============================================
+   Mobile Responsive Styles (iPhone 14 Pro Max and similar)
+   ============================================ */
+
+@media (max-width: 430px) {
+  /* Homepage adjustments */
+  .homepage__content {
+    padding: 1rem 0.5rem;
+  }
+
+  .intro {
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+
+  .intro__heading {
+    font-size: clamp(2.5rem, 10vmin, 5rem);
+    line-height: 1.1;
+  }
+
+  .intro__name {
+    font-size: clamp(2.5rem, 10vmin, 5rem);
+  }
+
+  .intro__heading--step2 {
+    font-size: clamp(1.5rem, 5.5vmin, 2.5rem);
+  }
+
+  /* Heart button */
+  .heart-btn__svg {
+    width: min(16vmin, 100px);
+    height: min(16vmin, 100px);
+  }
+
+  /* Envelopes section */
+  .envelopes {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .envelope-outer {
+    width: min(85vw, 280px);
+    height: min(57vw, 187px);
+  }
+
+  .envelope-label {
+    font-size: 1.4rem;
+    padding: 0.25em 0.5em;
+  }
+
+  .arch-text {
+    width: min(95%, 380px);
+    margin-bottom: 0.5rem;
+  }
+
+  /* Note/Word search card */
+  .note,
+  .word-search-card {
+    width: 95vw;
+    max-width: none;
+    padding: 3.5rem 1.25rem 1.25rem;
+    min-height: auto;
+  }
+
+  .note__title {
+    font-size: clamp(1.25rem, 4vmin, 2rem);
+    padding: 3.5rem 1.5rem 0.75rem;
+  }
+
+  .note__body {
+    flex-direction: column;
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  .note__col {
+    padding: 0.5rem 0;
+  }
+
+  .note__divider {
+    width: 100%;
+    min-height: 14px;
+    height: 14px;
+    margin: 0.75rem 0;
+  }
+
+  .note__section-title {
+    margin-bottom: 0.75rem;
+  }
+
+  .note__activities-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .note__activities-col--right {
+    padding-top: 0;
+  }
+
+  .note__activity {
+    gap: 0.65rem;
+    font-size: clamp(0.85rem, 2.2vmin, 1rem);
+  }
+
+  .note__activity-icon {
+    width: clamp(40px, 8.5vmin, 50px);
+    height: clamp(40px, 8.5vmin, 50px);
+  }
+
+  .note__activities-col--right .note__activity-icon {
+    width: clamp(46px, 9.5vmin, 56px);
+    height: clamp(46px, 9.5vmin, 56px);
+  }
+
+  .word-search-counter {
+    font-size: clamp(1rem, 2.8vmin, 1.3rem);
+  }
+
+  .word-search-progress {
+    font-size: clamp(0.9rem, 2.3vmin, 1.1rem);
+  }
+
+  /* Word search grid */
+  .word-search-grid {
+    max-width: min(95vw, 300px);
+    gap: 1.5px;
+  }
+
+  .word-search-cell {
+    font-size: clamp(0.7rem, 2.2vmin, 0.9rem);
+    min-height: 28px;
+  }
+
+  /* Back button */
+  .back-btn {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.4em;
+  }
+
+  .back-btn__icon {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .note__back,
+  .word-search-card__back {
+    top: max(1rem, 10%);
+    left: max(1rem, 10%);
+  }
+
+  /* Notification */
+  .notification__content {
+    padding: 1.5rem;
+    min-width: 180px;
+    max-width: 85vw;
+  }
+
+  .notification__text {
+    font-size: clamp(1.1rem, 3vmin, 1.6rem);
+  }
+
+  .notification__image {
+    max-width: min(180px, 50vw);
+    max-height: min(180px, 50vh);
+  }
+
+  /* Envelope adjustments for mobile */
+  .envelope-lid,
+  .envelope-body {
+    border-right-width: min(75vw, 140px);
+    border-left-width: min(75vw, 140px);
+    border-top-width: min(50vw, 95px);
+    border-bottom-width: min(50vw, 95px);
+  }
+
+  .envelope-letter {
+    font-size: clamp(1.1rem, 3vmin, 1.4rem);
+  }
+
+  .envelope-letter__inner {
+    gap: 0.2rem;
+  }
+}
+
+/* iPhone 14 Pro Max specific (428px width) */
+@media (max-width: 428px) and (max-height: 926px) {
+  .word-search-grid {
+    max-width: min(92vw, 280px);
+  }
+
+  .word-search-cell {
+    font-size: clamp(0.65rem, 2vmin, 0.85rem);
+  }
+
+  .envelope-outer {
+    width: min(80vw, 260px);
+    height: min(53vw, 173px);
+  }
+}
+
+/* Landscape mobile */
+@media (max-width: 926px) and (orientation: landscape) {
+  .homepage__content {
+    padding: 0.5rem;
+  }
+
+  .intro {
+    gap: 0.75rem;
+  }
+
+  .intro__heading {
+    font-size: clamp(2rem, 8vmin, 4rem);
+  }
+
+  .note,
+  .word-search-card {
+    width: 90vw;
+    max-height: 90vh;
+    padding: 2.5rem 1rem 1rem;
+  }
+
+  .word-search-grid {
+    max-width: min(85vw, 350px);
+  }
+
+  .envelopes {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .envelope-outer {
+    width: min(40vw, 200px);
+    height: min(27vw, 133px);
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 375px) {
+  .intro__heading {
+    font-size: clamp(2rem, 9vmin, 4.5rem);
+  }
+
+  .word-search-grid {
+    max-width: min(90vw, 260px);
+    gap: 1px;
+  }
+
+  .word-search-cell {
+    font-size: clamp(0.6rem, 1.8vmin, 0.8rem);
+    min-height: 24px;
+  }
+
+  .envelope-outer {
+    width: min(75vw, 240px);
+    height: min(50vw, 160px);
+  }
+}
+
+/* Touch target improvements */
+@media (hover: none) and (pointer: coarse) {
+  .heart-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .back-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .word-search-cell {
+    min-height: 32px;
+  }
+
+  .envelope-inner {
+    cursor: pointer;
+  }
+}
