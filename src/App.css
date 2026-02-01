@@ -398,7 +398,7 @@
   position: relative;
   margin: 0 0 0 -0.6rem;
   padding: 2.75rem 3rem 0.5rem 0.75rem;
-  margin-bottom: 5.5rem !important;
+  margin-bottom: 3.5rem !important;
   font-family: 'Amsterdam', cursive;
   font-weight: 700;
   color: #8B2E3C;
@@ -413,7 +413,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -2.75rem !important;
+  bottom: -2.5rem !important;
   height: 18px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20'%3E%3Cpath d='M 0 10 Q 25 4 50 10 Q 75 16 100 10 Q 125 4 150 10 Q 175 16 200 10' fill='none' stroke='%238B2E3C' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
   background-size: 100% 100%;
@@ -1433,13 +1433,13 @@
     padding-bottom: 2rem;
   }
 
-  /* Wavy line between title and “What are we gonna do?” – less space below border */
+  /* Wavy line between title and “What are we gonna do?” – gap matches divider-to-“What do we wear?” (1rem) */
   .note__title {
-    margin-bottom: 6rem !important;
+    margin-bottom: 3.5rem !important;
   }
 
   .note__title::after {
-    bottom: -3rem !important;
+    bottom: -2.5rem !important;
     height: 18px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20'%3E%3Cpath d='M 0 10 Q 25 4 50 10 Q 75 16 100 10 Q 125 4 150 10 Q 175 16 200 10' fill='none' stroke='%238B2E3C' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
     background-size: 100% 100%;
@@ -1653,11 +1653,11 @@
   .note__title {
     margin-left: -0.5rem;
     padding: 2.25rem 2.5rem 0.75rem 0.5rem;
-    margin-bottom: 6rem !important;
+    margin-bottom: 3.5rem !important;
   }
 
   .note__title::after {
-    bottom: -3rem !important;
+    bottom: -2.5rem !important;
   }
 
   .note__title-bold {
