@@ -560,7 +560,7 @@ function App() {
                   <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
                     <path d="M 4,6 C 24,4 44,7 64,5 C 84,7 96,6 96,6 C 97,40 96,74 96,108 C 97,122 96,124 96,124 C 76,122 56,123 36,122 C 16,123 4,124 4,124 C 5,82 4,48 4,6 Z" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
                   </svg>
-                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
+                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></h2>
                   <div className="note__body">
                     <section className="note__col note__col--left">
                       <div className="note__top-section" aria-hidden="true" />
@@ -603,7 +603,7 @@ function App() {
                   <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
                     <path d="M 4,6 C 24,4 44,7 64,5 C 84,7 96,6 96,6 C 97,40 96,74 96,108 C 97,122 96,124 96,124 C 76,122 56,123 36,122 C 16,123 4,124 4,124 C 5,82 4,48 4,6 Z" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
                   </svg>
-                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
+                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></h2>
                   <div className="note__gate-body">
                     <span className="note__gate-btn" style={{ pointerEvents: 'none' }}>Open</span>
                   </div>
@@ -615,7 +615,7 @@ function App() {
                   <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
                     <path d="M 4,6 C 24,4 44,7 64,5 C 84,7 96,6 96,6 C 97,40 96,74 96,108 C 97,122 96,124 96,124 C 76,122 56,123 36,122 C 16,123 4,124 4,124 C 5,82 4,48 4,6 Z" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
                   </svg>
-                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
+                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></h2>
                   <div className="note__gate-body">
                     <span className="note__gate-btn" style={{ pointerEvents: 'none' }}>Open</span>
                   </div>
@@ -624,7 +624,7 @@ function App() {
                   <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
                     <path d="M 4,6 C 24,4 44,7 64,5 C 84,7 96,6 96,6 C 97,40 96,74 96,108 C 97,122 96,124 96,124 C 76,122 56,123 36,122 C 16,123 4,124 4,124 C 5,82 4,48 4,6 Z" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
                   </svg>
-                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
+                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></h2>
                   <div className="note__body">
                     <section className="note__col note__col--left">
                       <div className="note__top-section" aria-hidden="true" />
@@ -677,7 +677,7 @@ function App() {
                       strokeLinecap="round"
                     />
                   </svg>
-                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
+                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></h2>
                   <div className="note__body">
                     <section className="note__col note__col--left">
                       <div className="note__top-section" aria-hidden="true" />
@@ -745,7 +745,7 @@ function App() {
                       strokeLinecap="round"
                     />
                   </svg>
-                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
+                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></h2>
                   <div className="note__gate-body">
                     <button type="button" className="note__gate-btn" onClick={handleOpenClick}>
                       Open
