@@ -416,6 +416,48 @@ function App() {
   const [flipping, setFlipping] = useState(false)
   const [flippingBack, setFlippingBack] = useState(false)
   const tripleClickRef = useRef({ count: 0, lastTime: 0, envelopeKey: null })
+  const wordSearchBackTapRef = useRef({ count: 0, lastTime: 0 })
+  const part1BackTapRef = useRef({ count: 0, lastTime: 0 })
+  const gateBackTapRef = useRef({ count: 0, lastTime: 0 })
+
+  const handleWordSearchBackTap = (e) => {
+    if (e.target.closest('.word-search-card')) return
+    const now = Date.now()
+    const r = wordSearchBackTapRef.current
+    if (now - r.lastTime > 500) r.count = 0
+    r.count += 1
+    r.lastTime = now
+    if (r.count >= 3) {
+      r.count = 0
+      goBack()
+    }
+  }
+
+  const handlePart1BackTap = (e) => {
+    if (e.target.closest('.note')) return
+    const now = Date.now()
+    const r = part1BackTapRef.current
+    if (now - r.lastTime > 500) r.count = 0
+    r.count += 1
+    r.lastTime = now
+    if (r.count >= 3) {
+      r.count = 0
+      handlePart1BackClick(e)
+    }
+  }
+
+  const handleGateBackTap = (e) => {
+    if (e.target.closest('.note')) return
+    const now = Date.now()
+    const r = gateBackTapRef.current
+    if (now - r.lastTime > 500) r.count = 0
+    r.count += 1
+    r.lastTime = now
+    if (r.count >= 3) {
+      r.count = 0
+      goBack()
+    }
+  }
 
   const handleOpenClick = (e) => {
     e.stopPropagation()
@@ -623,8 +665,8 @@ function App() {
                 </div>
               </div>
             ) : exited && wordSearchPassed && part1ContentUnlocked ? (
-              <div className="back-page">
-                <div className="note">
+              <div className="back-page back-page--part1" onClick={handlePart1BackTap} role="button" tabIndex={0} aria-label="Triple-tap background to go back">
+                <div className="note" onClick={(e) => e.stopPropagation()}>
                   <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
                     <path
                       d="M 4,6 C 24,4 44,7 64,5 C 84,7 96,6 96,6 C 97,40 96,74 96,108 C 97,122 96,124 96,124 C 76,122 56,123 36,122 C 16,123 4,124 4,124 C 5,82 4,48 4,6 Z"
@@ -635,11 +677,6 @@ function App() {
                       strokeLinecap="round"
                     />
                   </svg>
-                  <button type="button" className="back-btn note__back" onClick={handlePart1BackClick} aria-label="Back">
-                    <svg className="back-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M 19 12 H 5 M 12 19 l -7 -7 7 -7" />
-                    </svg>
-                  </button>
                   <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
                   <div className="note__body">
                     <section className="note__col note__col--left">
@@ -696,8 +733,8 @@ function App() {
                 </div>
               </div>
             ) : exited && wordSearchPassed ? (
-              <div className="back-page">
-                <div className="note note--gate">
+              <div className="back-page back-page--gate" onClick={handleGateBackTap} role="button" tabIndex={0} aria-label="Triple-tap background to go back">
+                <div className="note note--gate" onClick={(e) => e.stopPropagation()}>
                   <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
                     <path
                       d="M 4,6 C 24,4 44,7 64,5 C 84,7 96,6 96,6 C 97,40 96,74 96,108 C 97,122 96,124 96,124 C 76,122 56,123 36,122 C 16,123 4,124 4,124 C 5,82 4,48 4,6 Z"
@@ -708,11 +745,6 @@ function App() {
                       strokeLinecap="round"
                     />
                   </svg>
-                  <button type="button" className="back-btn note__back" onClick={(e) => { e.stopPropagation(); goBack(); }} aria-label="Back">
-                    <svg className="back-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M 19 12 H 5 M 12 19 l -7 -7 7 -7" />
-                    </svg>
-                  </button>
                   <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
                   <div className="note__gate-body">
                     <button type="button" className="note__gate-btn" onClick={handleOpenClick}>

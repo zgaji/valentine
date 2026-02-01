@@ -334,7 +334,7 @@
 .back-page {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   min-height: 100vh;
   padding: 1rem;
@@ -342,6 +342,11 @@
   animation: back-page-in 0.4s ease-out forwards;
   position: relative;
   z-index: 2;
+  overflow-y: auto;
+}
+
+.back-page--word-search {
+  align-items: center;
 }
 
 @keyframes back-page-in {
@@ -358,11 +363,13 @@
 .note {
   position: relative;
   width: 90vw;
-  height: min(90vh, 680px);
-  max-height: 90%;
+  min-height: min(90vh, 680px);
+  height: auto;
+  max-height: none;
   display: flex;
   flex-direction: column;
   overflow: visible;
+  flex-shrink: 0;
   background-color: #fdf6f6;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   color: #8B2E3C;
@@ -445,12 +452,13 @@
 }
 
 .note__top-section {
-  flex: 1;
-  min-height: 0;
+  flex: 0 0 auto;
+  min-height: 3rem;
 }
 
 .note__activities-block {
   flex-shrink: 0;
+  margin-top: 0.5rem;
 }
 
 .note__col--left .note__section-title {
