@@ -184,7 +184,7 @@ function getLine(start, end) {
   return out
 }
 
-function WordSearch({ onComplete, onBack }) {
+function WordSearch({ onComplete }) {
   const grid = useMemo(buildWordSearchGrid, [])
   const [foundWords, setFoundWords] = useState(() => new Set())
   const [startCell, setStartCell] = useState(null)
@@ -318,11 +318,6 @@ function WordSearch({ onComplete, onBack }) {
             strokeLinecap="round"
           />
         </svg>
-        <button type="button" className="back-btn word-search-card__back" onClick={(e) => { e.stopPropagation(); onBack(); }} aria-label="Back">
-          <svg className="back-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="M 19 12 H 5 M 12 19 l -7 -7 7 -7" />
-          </svg>
-        </button>
         <p className="word-search-counter">Finish the game to unlock</p>
         <p className="word-search-progress">Word Find: {foundWords.size}/{WORD_SEARCH_LIST.length}</p>
         <div
@@ -727,8 +722,16 @@ function App() {
                 </div>
               </div>
             ) : exited ? (
-              <div className="back-page" style={{ width: '100%', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <WordSearch onComplete={() => setWordSearchPassed(true)} onBack={goBack} />
+              <div
+                className="back-page back-page--word-search"
+                style={{ width: '100%', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                onClick={handleWordSearchBackTap}
+                role="button"
+                tabIndex={0}
+                aria-label="Triple-tap background to go back"
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleWordSearchBackTap(e); } }}
+              >
+                <WordSearch onComplete={() => setWordSearchPassed(true)} />
               </div>
             ) : (
               <div className={`envelopes-section${exiting ? ' envelopes-section--exiting' : ''}`}>

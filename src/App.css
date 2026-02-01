@@ -804,27 +804,6 @@
   color: #8B2E3C;
 }
 
-/* Back button top-right so title/counter can be centered (matches Part 1 note) */
-.word-search-card__back {
-  position: absolute;
-  top: max(1rem, 8%);
-  right: max(1rem, 6%);
-  left: auto;
-  z-index: 2;
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  min-height: 40px;
-  padding: 0.3em;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 1px 4px rgba(139, 46, 60, 0.15);
-}
-
-.word-search-card__back .back-btn__icon {
-  width: 0.9rem;
-  height: 0.9rem;
-}
-
 .word-search-counter {
   margin: 0 0 0.5rem;
   padding-top: 0.25rem;
@@ -1653,16 +1632,6 @@
     padding: 0.4em;
   }
 
-  .word-search-card__back {
-    top: max(0.75rem, 6%);
-    right: max(0.75rem, 5%);
-    left: auto;
-    min-width: 40px;
-    min-height: 40px;
-    width: 40px;
-    height: 40px;
-  }
-
   .back-btn__icon {
     width: 1.1rem;
     height: 1.1rem;
@@ -1823,11 +1792,6 @@
   .back-btn {
     min-width: 44px;
     min-height: 44px;
-  }
-
-  .word-search-card__back {
-    min-width: 40px;
-    min-height: 40px;
   }
 
   .word-search-cell {
