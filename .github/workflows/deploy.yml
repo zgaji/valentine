@@ -28,6 +28,8 @@ jobs:
         env:
           # Project site: https://<user>.github.io/<repo>/
           VITE_BASE_PATH: /${{ github.event.repository.name }}/
+      - name: List dist (verify build output)
+        run: ls -la dist && ls -la dist/assets 2>/dev/null || true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
