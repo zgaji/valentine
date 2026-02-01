@@ -426,7 +426,7 @@
   font-size: clamp(2.75rem, 7.5vmin, 3.75rem);
   font-weight: 700;
   margin-top: 0.15em;
-  margin-left: 1.5em;
+  margin-left: 0.5em;
 }
 
 .note__body {
@@ -1422,7 +1422,20 @@
     background-position: center;
   }
 
-  /* Align “What are we gonna do?” activity text */
+  /* Align “What are we gonna do?” – icon-first so all icons align on the left */
+  .note__activity {
+    flex-direction: row !important;
+    gap: 0.95rem;
+  }
+
+  .note__activity .note__activity-icons {
+    order: -1;
+    width: 48px;
+    min-width: 48px;
+    flex-shrink: 0;
+    justify-content: flex-start;
+  }
+
   .note__col--left {
     padding-left: 1.25rem;
   }
@@ -1431,18 +1444,14 @@
     margin-left: 0.2rem;
   }
 
+  .note__activity--icon-right {
+    padding-left: 0;
+  }
+
   .note__activity-icons {
     width: 48px;
     min-width: 48px;
     flex-shrink: 0;
-  }
-
-  .note__activity--icon-right {
-    padding-left: 2.75rem;
-  }
-
-  .note__activity {
-    gap: 0.95rem;
   }
 
   .note__activities-grid {
@@ -1627,7 +1636,7 @@
 
   .note__title-sub {
     font-size: clamp(2.35rem, 6.5vmin, 3.25rem);
-    margin-left: 1.5em;
+    margin-left: 0.5em;
   }
 
   .note__body {
@@ -1710,7 +1719,21 @@
     grid-row: auto;
   }
 
-  /* “What are we gonna do?” – align text with fixed icon width + extra left margin */
+  /* “What are we gonna do?” – icon-first so all icons align on the left */
+  .note__activity {
+    flex-direction: row !important;
+    gap: 0.9rem;
+    font-size: clamp(1.05rem, 2.8vmin, 1.35rem);
+  }
+
+  .note__activity .note__activity-icons {
+    order: -1;
+    width: 48px;
+    min-width: 48px;
+    flex-shrink: 0;
+    justify-content: flex-start;
+  }
+
   .note__col--left {
     padding-left: 1.5rem;
   }
@@ -1719,19 +1742,14 @@
     margin-left: 0.25rem;
   }
 
-  .note__activity {
-    gap: 0.9rem;
-    font-size: clamp(1.05rem, 2.8vmin, 1.35rem);
+  .note__activity--icon-right {
+    padding-left: 0;
   }
 
   .note__activity-icons {
     width: 48px;
     min-width: 48px;
     flex-shrink: 0;
-  }
-
-  .note__activity--icon-right {
-    padding-left: 3rem;
   }
 
   .note__activity-icon {
