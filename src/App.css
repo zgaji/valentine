@@ -1565,18 +1565,43 @@
 
   .note__body {
     flex-direction: column;
-    padding: 0 1.5rem 2rem;
+    padding: 0 1.5rem 2.5rem;
   }
 
   .note__col {
     padding: 0.5rem 0;
   }
 
+  /* What to wear section – enough space so text isn’t cut off */
+  .note__col--right {
+    padding-bottom: 1.5rem;
+    padding-top: 0.5rem;
+    min-height: 0;
+  }
+
+  .note__col--right .note__section-title {
+    margin-bottom: 0.75rem;
+  }
+
+  .note__col--right .note__clothes-img {
+    margin: 0.5rem 0;
+  }
+
+  .note__col--right .note__comfy {
+    margin: 0.5rem 0 0;
+    padding: 0 0.5rem;
+    line-height: 1.4;
+  }
+
+  /* Horizontal wavy divider on mobile (vertical divider becomes horizontal) */
   .note__divider {
     width: 100%;
-    min-height: 14px;
-    height: 14px;
-    margin: 0.75rem 0;
+    min-width: 100%;
+    min-height: 20px;
+    height: 20px;
+    margin: 1rem 0;
+    flex: 0 0 auto;
+    align-self: stretch;
   }
 
   .note__section-title {
@@ -1745,6 +1770,18 @@
 @media (max-width: 375px) {
   .intro__heading {
     font-size: clamp(2rem, 9vmin, 4.5rem);
+  }
+
+  .note__body {
+    padding-bottom: 2.75rem;
+  }
+
+  .note__col--right {
+    padding-bottom: 1.75rem;
+  }
+
+  .note__comfy {
+    font-size: clamp(1rem, 2.8vmin, 1.35rem);
   }
 
   .word-search-card {
