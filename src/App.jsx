@@ -787,9 +787,9 @@ function App() {
             <>
               <div className="intro__title-block">
                 <h1 className={`intro__heading${tapped ? ' intro__heading--step2' : ''}`}>
-                  {tapped ? "Let me show you what I have planned" : "Happy Valentines Day"}
+                  {tapped ? "Let me show you what I have planned" : "Happy Valentines Day,"}
                 </h1>
-                {!tapped && <span className="intro__name">My Micole</span>}
+                {!tapped && <span className="intro__name">My Micole 💕</span>}
               </div>
               {tapped && (
                 <button type="button" className="heart-btn" aria-label="Okay" onClick={handleYesClick}>
