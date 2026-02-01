@@ -790,6 +790,8 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   color: #8B2E3C;
   box-shadow: 0 8px 32px rgba(139, 46, 60, 0.12);
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .word-search-card__border {
@@ -807,6 +809,16 @@
   top: max(1.5rem, 12%);
   left: max(1.5rem, 12%);
   z-index: 2;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  min-height: 34px;
+  padding: 0.25em;
+}
+
+.word-search-card__back .back-btn__icon {
+  width: 0.75rem;
+  height: 0.75rem;
 }
 
 .word-search-counter {
@@ -831,9 +843,11 @@
 .word-search-grid {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  gap: 2px;
-  max-width:  min(90vw, 320px);
+  gap: 1.5px;
+  width: 100%;
+  max-width: min(100%, 240px);
   margin: 0 auto 1rem;
+  box-sizing: border-box;
   user-select: none;
   -webkit-user-select: none;
   touch-action: none;
@@ -851,14 +865,15 @@
   align-items: center;
   justify-content: center;
   font-family: system-ui, sans-serif;
-  font-size: clamp(0.75rem, 2.5vmin, 1rem);
+  font-size: clamp(0.65rem, 2.2vmin, 0.9rem);
   font-weight: 600;
   color: #8B2E3C;
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(139, 46, 60, 0.25);
-  border-radius: 4px;
+  border-radius: 3px;
   cursor: default;
-  min-height: 28px;
+  min-height: 0;
+  min-width: 0;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -1437,7 +1452,11 @@
   }
 
   .word-search-grid {
-    max-width: min(92vw, 300px);
+    max-width: min(100%, 250px);
+  }
+
+  .word-search-cell {
+    min-height: 20px;
   }
 }
 
@@ -1522,11 +1541,11 @@
     min-height: auto;
   }
 
-  /* Word search card: clear space for back button, center title/grid */
+  /* Word search card: more padding so grid has breathing room */
   .word-search-card {
     padding-top: 5.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
     padding-bottom: 1.25rem;
   }
 
@@ -1613,15 +1632,15 @@
     font-size: clamp(0.9rem, 2.3vmin, 1.1rem);
   }
 
-  /* Word search grid */
+  /* Word search grid – smaller so there’s visible padding inside the card */
   .word-search-grid {
-    max-width: min(95vw, 300px);
-    gap: 1.5px;
+    max-width: min(100%, 220px);
+    gap: 1px;
   }
 
   .word-search-cell {
-    font-size: clamp(0.7rem, 2.2vmin, 0.9rem);
-    min-height: 28px;
+    font-size: clamp(0.6rem, 2vmin, 0.8rem);
+    min-height: 20px;
   }
 
   /* Back button */
@@ -1629,6 +1648,13 @@
     min-width: 44px;
     min-height: 44px;
     padding: 0.4em;
+  }
+
+  .word-search-card__back {
+    min-width: 34px;
+    min-height: 34px;
+    width: 34px;
+    height: 34px;
   }
 
   .back-btn__icon {
@@ -1688,7 +1714,7 @@
 /* iPhone 14 Pro Max specific (428px width) */
 @media (max-width: 428px) and (max-height: 926px) {
   .word-search-grid {
-    max-width: min(92vw, 280px);
+    max-width: min(100%, 280px);
   }
 
   .word-search-cell {
@@ -1723,7 +1749,7 @@
   }
 
   .word-search-grid {
-    max-width: min(85vw, 350px);
+    max-width: min(100%, 260px);
   }
 
   .envelopes {
@@ -1745,8 +1771,8 @@
 
   .word-search-card {
     padding-top: 4.75rem;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .word-search-counter {
@@ -1758,14 +1784,14 @@
   }
 
   .word-search-grid {
-    max-width: min(88vw, 260px);
+    max-width: min(100%, 200px);
     gap: 1px;
     margin-bottom: 0.75rem;
   }
 
   .word-search-cell {
-    font-size: clamp(0.6rem, 1.8vmin, 0.8rem);
-    min-height: 24px;
+    font-size: clamp(0.5rem, 1.6vmin, 0.7rem);
+    min-height: 18px;
   }
 
   .envelopes-section {
@@ -1798,8 +1824,13 @@
     min-height: 44px;
   }
 
+  .word-search-card__back {
+    min-width: 34px;
+    min-height: 34px;
+  }
+
   .word-search-cell {
-    min-height: 32px;
+    min-height: 26px;
   }
 
   .envelope-inner {
