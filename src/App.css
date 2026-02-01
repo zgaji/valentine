@@ -1,3 +1,21 @@
+/* Custom font for Part 1 activity text */
+@font-face {
+  font-family: 'Zai Calligraphy';
+  src: url('./assets/fonts/zai_CalligraphyScriptHandwritten.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Amsterdam – Part 1 note title */
+@font-face {
+  font-family: 'Amsterdam';
+  src: url('./assets/fonts/Amsterdam.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ============================================
    Homepage – cream background + blurred hearts
    ============================================ */
@@ -270,7 +288,7 @@
 
 .heart-btn__text {
   fill: #fff;
-  font-size: 5px;
+  font-size: 3.5px;
   font-weight: 700;
   font-family: system-ui, -apple-system, sans-serif;
   text-anchor: middle;
@@ -344,6 +362,7 @@
   max-height: 90%;
   display: flex;
   flex-direction: column;
+  overflow: visible;
   background-color: #fdf6f6;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   color: #8B2E3C;
@@ -363,31 +382,52 @@
 .note__back {
   position: absolute;
   top: max(1.5rem, 12%);
-  left: max(1.5rem, 12%);
+  right: max(1.5rem, 12%);
+  left: auto;
   z-index: 2;
 }
 
 .note__title {
-  margin: 0;
-  padding: 4rem 2rem 1rem;
-  font-family: 'Homemade Apple', cursive;
-  font-size: clamp(1.5rem, 4.5vmin, 2.5rem);
-  font-weight: 400;
+  margin: 0 0 0 -0.6rem;
+  padding: 2.25rem 3rem 1rem 0.75rem;
+  font-family: 'Amsterdam', cursive;
+  font-weight: 700;
   color: #8B2E3C;
-  text-align: center;
+  text-align: left;
   line-height: 1.2;
   flex-shrink: 0;
 }
 
 .note__title-bold {
+  display: block;
+  font-size: clamp(3rem, 8vmin, 4.5rem);
   font-weight: 700;
+  line-height: 1.1;
+}
+
+.note__title-bold::first-letter {
+  font-size: 1.5em;
+  vertical-align: baseline;
+}
+
+.note__title-num {
+  font-family: 'Amsterdam', cursive;
+}
+
+.note__title-sub {
+  display: block;
+  font-size: clamp(2.75rem, 7.5vmin, 3.75rem);
+  font-weight: 700;
+  margin-top: 0.15em;
+  margin-left: 1.25em;
 }
 
 .note__body {
   display: flex;
   flex: 1;
   min-height: 0;
-  padding: 0 2rem 2rem;
+  padding: 0 2rem 2.75rem;
+  overflow: visible;
 }
 
 .note__col {
@@ -399,8 +439,18 @@
   flex: 1.6;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   padding-left: 1.35rem;
+  min-width: 0;
+}
+
+.note__top-section {
+  flex: 1;
+  min-height: 0;
+}
+
+.note__activities-block {
+  flex-shrink: 0;
 }
 
 .note__col--left .note__section-title {
@@ -411,39 +461,50 @@
 
 .note__col--right {
   flex: 0.7;
+  min-width: min(160px, 28%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 }
 
+.note__col--right .note__section-title {
+  margin-bottom: 0.35rem;
+}
+
+.note__col--right .note__clothes-img {
+  margin: 0.4rem 0;
+}
+
+.note__col--right .note__comfy {
+  margin: 0.25rem 0 0;
+}
+
 .note__section-title {
-  margin: 0 0 1rem;
-  font-family: 'Homemade Apple', cursive;
-  font-size: clamp(1.1rem, 3vmin, 1.5rem);
+  margin: 0 0 0.75rem;
+  font-family: 'Zai Calligraphy', cursive;
+  font-size: clamp(1.45rem, 4.2vmin, 1.9rem);
   font-weight: 400;
   color: #8B2E3C;
   line-height: 1.3;
+  flex-shrink: 0;
 }
 
 .note__activities-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.75rem 1.25rem;
+  grid-template-rows: auto auto;
+  gap: 1rem 1rem;
   align-items: start;
 }
 
-.note__activities-col {
-  display: flex;
-  flex-direction: column;
-  gap: 1.4rem;
-}
+.note__activity--c1-r1 { grid-column: 1; grid-row: 1; }
+.note__activity--c2-r1 { grid-column: 2; grid-row: 1; }
+.note__activity--c1-r2 { grid-column: 1; grid-row: 2; }
+.note__activity--c2-r2 { grid-column: 2; grid-row: 2; }
 
-.note__activities-col--right {
-  padding-top: 3.5rem;
-}
-
-.note__activities-col--right .note__activity {
+.note__activity--c2-r1,
+.note__activity--c2-r2 {
   gap: 0.4rem;
 }
 
@@ -452,18 +513,46 @@
   align-items: center;
   gap: 0.85rem;
   flex-wrap: nowrap;
-  font-family: 'Homemade Apple', cursive;
-  font-size: clamp(0.9rem, 2.5vmin, 1.15rem);
+  font-family: 'Zai Calligraphy', cursive;
+  font-size: clamp(1.15rem, 3.2vmin, 1.5rem);
   color: #8B2E3C;
   line-height: 1.4;
+  text-align: left;
 }
 
 .note__activity > span:not(.note__activity-icons) {
   min-width: 0;
+  text-align: left;
 }
 
 .note__activity--icon-right {
   flex-direction: row-reverse;
+}
+
+.note__activity-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.note__activity-icons--overlap {
+  gap: 0;
+}
+
+.note__activity-icons--overlap .note__activity-icon:last-child {
+  margin-left: -25%;
+  margin-top: 35%;
+}
+
+/* Keep Matcha Fest + twenty four bakeshop text beside the icons */
+.note__activity:has(.note__activity-icons--overlap) {
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.note__activity:has(.note__activity-icons--overlap) > span:not(.note__activity-icons) {
+  padding-top: 0.15em;
 }
 
 .note__activity-icon {
@@ -473,30 +562,32 @@
   flex-shrink: 0;
 }
 
-.note__activities-col--right .note__activity-icon {
+.note__activity--c2-r1 .note__activity-icon,
+.note__activity--c2-r2 .note__activity-icon {
   width: clamp(50px, 11vmin, 66px);
   height: clamp(50px, 11vmin, 66px);
 }
 
 .note__divider {
   width: 16px;
+  min-width: 16px;
   min-height: 120px;
   flex: 0 0 auto;
   color: #8B2E3C;
   opacity: 1;
   align-self: stretch;
+  flex-shrink: 0;
 }
 
 .note__clothes-img {
   max-width: clamp(120px, 25vmin, 180px);
   height: auto;
   object-fit: contain;
-  margin: 0.75rem 0;
 }
 
 .note__comfy {
-  margin: 0.5rem 0 0;
-  font-family: 'Homemade Apple', cursive;
+  margin: 0;
+  font-family: 'Zai Calligraphy', cursive;
   font-size: clamp(1.1rem, 3vmin, 1.5rem);
   font-weight: 400;
   color: #8B2E3C;
@@ -504,10 +595,6 @@
 }
 
 /* Gate page – after word search, before Part 1 content */
-.note--gate .note__title {
-  font-size: clamp(1.85rem, 5.5vmin, 3.25rem);
-}
-
 .note--gate .note__gate-body {
   flex: 1;
   display: flex;
@@ -1278,6 +1365,27 @@
    Mobile Responsive Styles (iPhone 14 Pro Max and similar)
    ============================================ */
 
+/* Part 1 page: list view on mobile (single column for body + activities) */
+@media (max-width: 600px) {
+  .note__body {
+    flex-direction: column;
+  }
+
+  .note__activities-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .note__activity--c1-r1,
+  .note__activity--c2-r1,
+  .note__activity--c1-r2,
+  .note__activity--c2-r2 {
+    grid-column: unset;
+    grid-row: unset;
+  }
+}
+
 @media (max-width: 430px) {
   /* Homepage adjustments */
   .homepage__content {
@@ -1339,13 +1447,22 @@
   }
 
   .note__title {
-    font-size: clamp(1.25rem, 4vmin, 2rem);
-    padding: 3.5rem 1.5rem 0.75rem;
+    margin-left: -0.5rem;
+    padding: 1.75rem 2.5rem 0.75rem 0.5rem;
+  }
+
+  .note__title-bold {
+    font-size: clamp(2.5rem, 7vmin, 3.75rem);
+  }
+
+  .note__title-sub {
+    font-size: clamp(2.35rem, 6.5vmin, 3.25rem);
+    margin-left: 1em;
   }
 
   .note__body {
     flex-direction: column;
-    padding: 0 1.5rem 1.5rem;
+    padding: 0 1.5rem 2rem;
   }
 
   .note__col {
@@ -1361,20 +1478,26 @@
 
   .note__section-title {
     margin-bottom: 0.75rem;
+    font-size: clamp(1.3rem, 3.8vmin, 1.7rem);
   }
 
   .note__activities-grid {
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
     gap: 0.85rem;
   }
 
-  .note__activities-col--right {
-    padding-top: 0;
+  .note__activity--c1-r1,
+  .note__activity--c2-r1,
+  .note__activity--c1-r2,
+  .note__activity--c2-r2 {
+    grid-column: 1;
+    grid-row: auto;
   }
 
   .note__activity {
     gap: 0.65rem;
-    font-size: clamp(0.85rem, 2.2vmin, 1rem);
+    font-size: clamp(1.05rem, 2.8vmin, 1.35rem);
   }
 
   .note__activity-icon {
@@ -1382,7 +1505,8 @@
     height: clamp(40px, 8.5vmin, 50px);
   }
 
-  .note__activities-col--right .note__activity-icon {
+  .note__activity--c2-r1 .note__activity-icon,
+  .note__activity--c2-r2 .note__activity-icon {
     width: clamp(46px, 9.5vmin, 56px);
     height: clamp(46px, 9.5vmin, 56px);
   }
@@ -1418,7 +1542,12 @@
     height: 1.1rem;
   }
 
-  .note__back,
+  .note__back {
+    top: max(1rem, 10%);
+    right: max(1rem, 10%);
+    left: auto;
+  }
+
   .word-search-card__back {
     top: max(1rem, 10%);
     left: max(1rem, 10%);

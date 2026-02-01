@@ -523,38 +523,33 @@ function App() {
                   <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
                     <path d="M 4,6 C 24,4 44,7 64,5 C 84,7 96,6 96,6 C 97,40 96,74 96,108 C 97,122 96,124 96,124 C 76,122 56,123 36,122 C 16,123 4,124 4,124 C 5,82 4,48 4,6 Z" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
                   </svg>
-                  <h2 className="note__title"><span className="note__title-bold">Part 1:</span> First date, take two</h2>
+                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
                   <div className="note__body">
                     <section className="note__col note__col--left">
-                      <h3 className="note__section-title">What are we gonna do?</h3>
-                      <div className="note__activities-grid">
-                        <div className="note__activities-col note__activities-col--left">
-                          <div className="note__activity">
-                            <span className="note__activity-icons">{part1ImgUrls['lunch'] && <img src={part1ImgUrls['lunch']} alt="" className="note__activity-icon" />}</span>
-                            <span>Lunch at MOS Burger or Bondica</span>
-                          </div>
-                          <div className="note__activity">
-                            <span className="note__activity-icons">{part1ImgUrls['baking'] && <img src={part1ImgUrls['baking']} alt="" className="note__activity-icon" />}</span>
-                            <span>Bake at IDIM</span>
-                          </div>
-                          <div className="note__activity">
-                            <span className="note__activity-icons">
-                              {part1ImgUrls['matcha'] && <img src={part1ImgUrls['matcha']} alt="" className="note__activity-icon" />}
-                              {part1ImgUrls['cookies'] && <img src={part1ImgUrls['cookies']} alt="" className="note__activity-icon" />}
-                            </span>
-                            <span>Matcha Fest + twenty four bakeshop</span>
-                          </div>
+                      <div className="note__top-section" aria-hidden="true" />
+                      <div className="note__activities-block">
+                        <h3 className="note__section-title">What are we gonna do?</h3>
+                        <div className="note__activities-grid">
+                        <div className="note__activity note__activity--c1-r1">
+                          <span className="note__activity-icons">{part1ImgUrls['baking'] && <img src={part1ImgUrls['baking']} alt="" className="note__activity-icon" />}</span>
+                          <span>Bake at IDIM</span>
                         </div>
-                        <div className="note__activities-col note__activities-col--right">
-                          <div className="note__activity note__activity--icon-right">
-                            <span>Mandatory photobooth!</span>
-                            <span className="note__activity-icons">{part1ImgUrls['pb-strip'] && <img src={part1ImgUrls['pb-strip']} alt="" className="note__activity-icon" />}</span>
-                          </div>
-                          <div className="note__activity note__activity--icon-right">
-                            <span>Dinner at Grifoni&apos;s</span>
-                            <span className="note__activity-icons">{part1ImgUrls['dinner'] && <img src={part1ImgUrls['dinner']} alt="" className="note__activity-icon" />}</span>
-                          </div>
+                        <div className="note__activity note__activity--icon-right note__activity--c2-r1">
+                          <span>Mandatory photobooth!</span>
+                          <span className="note__activity-icons">{part1ImgUrls['pb-strip'] && <img src={part1ImgUrls['pb-strip']} alt="" className="note__activity-icon" />}</span>
                         </div>
+                        <div className="note__activity note__activity--c1-r2">
+                          <span className="note__activity-icons note__activity-icons--overlap">
+                            {part1ImgUrls['matcha'] && <img src={part1ImgUrls['matcha']} alt="" className="note__activity-icon" />}
+                            {part1ImgUrls['cookies'] && <img src={part1ImgUrls['cookies']} alt="" className="note__activity-icon" />}
+                          </span>
+                          <span>Matcha Fest + twenty four bakeshop</span>
+                        </div>
+                        <div className="note__activity note__activity--icon-right note__activity--c2-r2">
+                          <span>Dinner at Grifoni&apos;s</span>
+                          <span className="note__activity-icons">{part1ImgUrls['dinner'] && <img src={part1ImgUrls['dinner']} alt="" className="note__activity-icon" />}</span>
+                        </div>
+                      </div>
                       </div>
                     </section>
                     <svg className="note__divider" viewBox="0 0 20 200" preserveAspectRatio="none" aria-hidden="true">
@@ -571,7 +566,7 @@ function App() {
                   <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
                     <path d="M 4,6 C 24,4 44,7 64,5 C 84,7 96,6 96,6 C 97,40 96,74 96,108 C 97,122 96,124 96,124 C 76,122 56,123 36,122 C 16,123 4,124 4,124 C 5,82 4,48 4,6 Z" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
                   </svg>
-                  <h2 className="note__title"><span className="note__title-bold">Part 1:</span> First date, take two</h2>
+                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
                   <div className="note__gate-body">
                     <span className="note__gate-btn" style={{ pointerEvents: 'none' }}>Open</span>
                   </div>
@@ -583,7 +578,7 @@ function App() {
                   <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
                     <path d="M 4,6 C 24,4 44,7 64,5 C 84,7 96,6 96,6 C 97,40 96,74 96,108 C 97,122 96,124 96,124 C 76,122 56,123 36,122 C 16,123 4,124 4,124 C 5,82 4,48 4,6 Z" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
                   </svg>
-                  <h2 className="note__title"><span className="note__title-bold">Part 1:</span> First date, take two</h2>
+                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
                   <div className="note__gate-body">
                     <span className="note__gate-btn" style={{ pointerEvents: 'none' }}>Open</span>
                   </div>
@@ -592,38 +587,33 @@ function App() {
                   <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
                     <path d="M 4,6 C 24,4 44,7 64,5 C 84,7 96,6 96,6 C 97,40 96,74 96,108 C 97,122 96,124 96,124 C 76,122 56,123 36,122 C 16,123 4,124 4,124 C 5,82 4,48 4,6 Z" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
                   </svg>
-                  <h2 className="note__title"><span className="note__title-bold">Part 1:</span> First date, take two</h2>
+                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
                   <div className="note__body">
                     <section className="note__col note__col--left">
-                      <h3 className="note__section-title">What are we gonna do?</h3>
-                      <div className="note__activities-grid">
-                        <div className="note__activities-col note__activities-col--left">
-                          <div className="note__activity">
-                            <span className="note__activity-icons">{part1ImgUrls['lunch'] && <img src={part1ImgUrls['lunch']} alt="" className="note__activity-icon" />}</span>
-                            <span>Lunch at MOS Burger or Bondica</span>
-                          </div>
-                          <div className="note__activity">
-                            <span className="note__activity-icons">{part1ImgUrls['baking'] && <img src={part1ImgUrls['baking']} alt="" className="note__activity-icon" />}</span>
-                            <span>Bake at IDIM</span>
-                          </div>
-                          <div className="note__activity">
-                            <span className="note__activity-icons">
-                              {part1ImgUrls['matcha'] && <img src={part1ImgUrls['matcha']} alt="" className="note__activity-icon" />}
-                              {part1ImgUrls['cookies'] && <img src={part1ImgUrls['cookies']} alt="" className="note__activity-icon" />}
-                            </span>
-                            <span>Matcha Fest + twenty four bakeshop</span>
-                          </div>
+                      <div className="note__top-section" aria-hidden="true" />
+                      <div className="note__activities-block">
+                        <h3 className="note__section-title">What are we gonna do?</h3>
+                        <div className="note__activities-grid">
+                        <div className="note__activity note__activity--c1-r1">
+                          <span className="note__activity-icons">{part1ImgUrls['baking'] && <img src={part1ImgUrls['baking']} alt="" className="note__activity-icon" />}</span>
+                          <span>Bake at IDIM</span>
                         </div>
-                        <div className="note__activities-col note__activities-col--right">
-                          <div className="note__activity note__activity--icon-right">
-                            <span>Mandatory photobooth!</span>
-                            <span className="note__activity-icons">{part1ImgUrls['pb-strip'] && <img src={part1ImgUrls['pb-strip']} alt="" className="note__activity-icon" />}</span>
-                          </div>
-                          <div className="note__activity note__activity--icon-right">
-                            <span>Dinner at Grifoni&apos;s</span>
-                            <span className="note__activity-icons">{part1ImgUrls['dinner'] && <img src={part1ImgUrls['dinner']} alt="" className="note__activity-icon" />}</span>
-                          </div>
+                        <div className="note__activity note__activity--icon-right note__activity--c2-r1">
+                          <span>Mandatory photobooth!</span>
+                          <span className="note__activity-icons">{part1ImgUrls['pb-strip'] && <img src={part1ImgUrls['pb-strip']} alt="" className="note__activity-icon" />}</span>
                         </div>
+                        <div className="note__activity note__activity--c1-r2">
+                          <span className="note__activity-icons note__activity-icons--overlap">
+                            {part1ImgUrls['matcha'] && <img src={part1ImgUrls['matcha']} alt="" className="note__activity-icon" />}
+                            {part1ImgUrls['cookies'] && <img src={part1ImgUrls['cookies']} alt="" className="note__activity-icon" />}
+                          </span>
+                          <span>Matcha Fest + twenty four bakeshop</span>
+                        </div>
+                        <div className="note__activity note__activity--icon-right note__activity--c2-r2">
+                          <span>Dinner at Grifoni&apos;s</span>
+                          <span className="note__activity-icons">{part1ImgUrls['dinner'] && <img src={part1ImgUrls['dinner']} alt="" className="note__activity-icon" />}</span>
+                        </div>
+                      </div>
                       </div>
                     </section>
                     <svg className="note__divider" viewBox="0 0 20 200" preserveAspectRatio="none" aria-hidden="true">
@@ -655,45 +645,38 @@ function App() {
                       <path d="M 19 12 H 5 M 12 19 l -7 -7 7 -7" />
                     </svg>
                   </button>
-                  <h2 className="note__title"><span className="note__title-bold">Part 1:</span> First date, take two</h2>
+                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
                   <div className="note__body">
                     <section className="note__col note__col--left">
-                      <h3 className="note__section-title">What are we gonna do?</h3>
-                      <div className="note__activities-grid">
-                        <div className="note__activities-col note__activities-col--left">
-                          <div className="note__activity">
-                            <span className="note__activity-icons">
-                              {part1ImgUrls['lunch'] && <img src={part1ImgUrls['lunch']} alt="" className="note__activity-icon" />}
-                            </span>
-                            <span>Lunch at MOS Burger or Bondica</span>
-                          </div>
-                          <div className="note__activity">
-                            <span className="note__activity-icons">
-                              {part1ImgUrls['baking'] && <img src={part1ImgUrls['baking']} alt="" className="note__activity-icon" />}
-                            </span>
-                            <span>Bake at IDIM</span>
-                          </div>
-                          <div className="note__activity">
-                            <span className="note__activity-icons">
-                              {part1ImgUrls['matcha'] && <img src={part1ImgUrls['matcha']} alt="" className="note__activity-icon" />}
-                              {part1ImgUrls['cookies'] && <img src={part1ImgUrls['cookies']} alt="" className="note__activity-icon" />}
-                            </span>
-                            <span>Matcha Fest + twenty four bakeshop</span>
-                          </div>
+                      <div className="note__top-section" aria-hidden="true" />
+                      <div className="note__activities-block">
+                        <h3 className="note__section-title">What are we gonna do?</h3>
+                        <div className="note__activities-grid">
+                        <div className="note__activity note__activity--c1-r1">
+                          <span className="note__activity-icons">
+                            {part1ImgUrls['baking'] && <img src={part1ImgUrls['baking']} alt="" className="note__activity-icon" />}
+                          </span>
+                          <span>Bake at IDIM</span>
                         </div>
-                        <div className="note__activities-col note__activities-col--right">
-                          <div className="note__activity note__activity--icon-right">
-                            <span>Mandatory photobooth!</span>
-                            <span className="note__activity-icons">
-                              {part1ImgUrls['pb-strip'] && <img src={part1ImgUrls['pb-strip']} alt="" className="note__activity-icon" />}
-                            </span>
-                          </div>
-                          <div className="note__activity note__activity--icon-right">
-                            <span>Dinner at Grifoni&apos;s</span>
-                            <span className="note__activity-icons">
-                              {part1ImgUrls['dinner'] && <img src={part1ImgUrls['dinner']} alt="" className="note__activity-icon" />}
-                            </span>
-                          </div>
+                        <div className="note__activity note__activity--icon-right note__activity--c2-r1">
+                          <span>Mandatory photobooth!</span>
+                          <span className="note__activity-icons">
+                            {part1ImgUrls['pb-strip'] && <img src={part1ImgUrls['pb-strip']} alt="" className="note__activity-icon" />}
+                          </span>
+                        </div>
+                        <div className="note__activity note__activity--c1-r2">
+                          <span className="note__activity-icons note__activity-icons--overlap">
+                            {part1ImgUrls['matcha'] && <img src={part1ImgUrls['matcha']} alt="" className="note__activity-icon" />}
+                            {part1ImgUrls['cookies'] && <img src={part1ImgUrls['cookies']} alt="" className="note__activity-icon" />}
+                          </span>
+                          <span>Matcha Fest + twenty four bakeshop</span>
+                        </div>
+                        <div className="note__activity note__activity--icon-right note__activity--c2-r2">
+                          <span>Dinner at Grifoni&apos;s</span>
+                          <span className="note__activity-icons">
+                            {part1ImgUrls['dinner'] && <img src={part1ImgUrls['dinner']} alt="" className="note__activity-icon" />}
+                          </span>
+                        </div>
                         </div>
                       </div>
                     </section>
@@ -735,7 +718,7 @@ function App() {
                       <path d="M 19 12 H 5 M 12 19 l -7 -7 7 -7" />
                     </svg>
                   </button>
-                  <h2 className="note__title"><span className="note__title-bold">Part 1:</span> First date, take two</h2>
+                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
                   <div className="note__gate-body">
                     <button type="button" className="note__gate-btn" onClick={handleOpenClick}>
                       Open
@@ -784,7 +767,7 @@ function App() {
                       </linearGradient>
                     </defs>
                     <path d={heartPath} fill="url(#heartBtnGrad)" stroke="rgba(255,255,255,0.6)" strokeWidth="0.4" />
-                    <text x="12" y="12" textAnchor="middle" dominantBaseline="middle" className="heart-btn__text">Yes</text>
+                    <text x="12" y="12" textAnchor="middle" dominantBaseline="middle" className="heart-btn__text">Okay</text>
                   </svg>
                 </button>
               )}
