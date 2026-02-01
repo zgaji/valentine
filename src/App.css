@@ -1578,10 +1578,10 @@
     flex: 0 0 auto;
   }
 
-  /* What to wear section – enough space so text isn’t cut off */
+  /* What to wear section – enough space so it doesn’t overlap the bottom border */
   .note__col--right {
     flex: 0 0 auto;
-    padding-bottom: 1.5rem;
+    padding-bottom: 2rem;
     padding-top: 0.5rem;
     min-height: 0;
   }
@@ -1600,15 +1600,25 @@
     line-height: 1.4;
   }
 
-  /* Horizontal wavy divider on mobile (vertical divider becomes horizontal) */
+  /* Horizontal wavy divider on mobile – use background so it’s always horizontal */
   .note__divider {
     width: 100%;
     min-width: 100%;
-    min-height: 20px;
     height: 20px;
+    min-height: 20px;
     margin: 1rem 0;
     flex: 0 0 auto;
     align-self: stretch;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20'%3E%3Cpath d='M 0 10 Q 25 4 50 10 Q 75 16 100 10 Q 125 4 150 10 Q 175 16 200 10' fill='none' stroke='%238B2E3C' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #8B2E3C;
+  }
+
+  .note__divider path {
+    stroke: none !important;
+    fill: none !important;
   }
 
   .note__section-title {
@@ -1780,11 +1790,11 @@
   }
 
   .note__body {
-    padding-bottom: 2.75rem;
+    padding-bottom: 3rem;
   }
 
   .note__col--right {
-    padding-bottom: 1.75rem;
+    padding-bottom: 2.25rem;
   }
 
   .note__comfy {
