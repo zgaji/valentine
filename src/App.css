@@ -467,14 +467,14 @@
   display: block;
   font-size: clamp(2.75rem, 7.5vmin, 3.75rem);
   font-weight: 700;
-  margin-top: 0.25em;
+  margin-top: 0.15em;
   margin-left: 0;
 }
 
 .note__title-sub--second {
   display: block;
-  margin-top: 0.25em;
-  margin-left: 50em;
+  margin-top: 0.15em;
+  margin-left: 15em;
 }
 
 .note__body {
@@ -1695,7 +1695,7 @@
 
   /* iPhone 14 Pro Max (430px): align “take two” with “first date,” */
   .note__title-sub--second {
-    margin-left: 50em;
+    margin-left: 15em;
   }
 
   .note__body {
