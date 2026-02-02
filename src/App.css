@@ -426,6 +426,14 @@
   margin-top: 1.5rem;
 }
 
+.back-page--part1 .note__title-bold {
+  font-size: clamp(1.75rem, 4.8vmin, 2.35rem);
+}
+
+.back-page--part1 .note__title-sub {
+  font-size: clamp(1.5rem, 4vmin, 2rem);
+}
+
 .note__border {
   position: absolute;
   inset: 0;
@@ -645,6 +653,7 @@
 }
 
 .note__divider {
+  display: none;
   width: 16px;
   min-width: 16px;
   min-height: 120px;
