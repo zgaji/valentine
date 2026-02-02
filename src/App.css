@@ -474,7 +474,7 @@
 .note__title-sub--second {
   display: block;
   margin-top: 0.15em;
-  margin-left: 0;
+  margin-left: 10em;
 }
 
 .note__body {
@@ -1695,7 +1695,7 @@
 
   /* iPhone 14 Pro Max (430px): align “take two” with “first date,” */
   .note__title-sub--second {
-    margin-left: 20em;
+    margin-left: 10em;
   }
 
   .note__body {
