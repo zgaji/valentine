@@ -392,7 +392,10 @@
   overflow: visible;
   flex-shrink: 0;
   background-color: #fdf6f6;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-image: url('./assets/border.png'), url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 100% 100%;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center;
   color: #8B2E3C;
   box-shadow: 0 8px 32px rgba(139, 46, 60, 0.12);
 }
@@ -416,30 +419,14 @@
 }
 
 .note__title {
-  position: relative;
-  margin: 0 0 0 -0.6rem;
-  padding: 2.75rem 3rem 0.5rem 0.75rem;
-  margin-bottom: 2.6rem !important;
+  margin: 0 0 1rem;
+  padding: 2rem 1.5rem 0;
   font-family: 'Amsterdam', cursive;
   font-weight: 700;
   color: #8B2E3C;
-  text-align: left;
+  text-align: center;
   line-height: 1.2;
   flex-shrink: 0;
-}
-
-.note__title::after {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -2.5rem !important;
-  height: 18px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20'%3E%3Cpath d='M 0 10 Q 25 4 50 10 Q 75 16 100 10 Q 125 4 150 10 Q 175 16 200 10' fill='none' stroke='%238B2E3C' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .note__title-bold {
@@ -460,7 +447,7 @@
 
 .note__title-sub-wrap {
   display: block;
-  margin-left: 1.15em;
+  text-align: center;
 }
 
 .note__title-sub {
@@ -468,13 +455,11 @@
   font-size: clamp(2.75rem, 7.5vmin, 3.75rem);
   font-weight: 700;
   margin-top: 0.15em;
-  margin-left: 0;
 }
 
 .note__title-sub--second {
   display: block;
   margin-top: 0.15em;
-  margin-left: 1.9em;
 }
 
 .note__body {
@@ -847,7 +832,10 @@
   max-width: 420px;
   padding: 4rem 1.5rem 1.5rem;
   background-color: #fdf6f6;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-image: url('./assets/border.png'), url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 100% 100%;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center;
   color: #8B2E3C;
   box-shadow: 0 8px 32px rgba(139, 46, 60, 0.12);
   box-sizing: border-box;
@@ -1454,20 +1442,6 @@
     padding-bottom: 2rem;
   }
 
-  /* Wavy line between title and “What are we gonna do?” – minimal gap below border */
-  .note__title {
-    margin-bottom: 0.6rem !important;
-  }
-
-  .note__title::after {
-    bottom: -2.5rem !important;
-    height: 18px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20'%3E%3Cpath d='M 0 10 Q 25 4 50 10 Q 75 16 100 10 Q 125 4 150 10 Q 175 16 200 10' fill='none' stroke='%238B2E3C' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
   /* Align “What are we gonna do?” – icon-first so all icons align on the left */
   .note__activity {
     flex-direction: row !important;
@@ -1671,31 +1645,12 @@
     margin-bottom: 0.75rem;
   }
 
-  .note__title {
-    margin-left: -0.5rem;
-    padding: 2.25rem 2.5rem 0.75rem 0.5rem;
-    margin-bottom: 2.6rem !important;
-  }
-
-  .note__title::after {
-    bottom: -2.5rem !important;
-  }
-
   .note__title-bold {
     font-size: clamp(2.5rem, 7vmin, 3.75rem);
   }
 
-  .note__title-sub-wrap {
-    margin-left: 1.15em;
-  }
-
   .note__title-sub {
     font-size: clamp(2.35rem, 6.5vmin, 3.25rem);
-  }
-
-  /* iPhone 14 Pro Max (430px): align “take two” with “first date,” */
-  .note__title-sub--second {
-    margin-left: 1.9em;
   }
 
   .note__body {
