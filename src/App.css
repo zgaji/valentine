@@ -431,13 +431,13 @@
 
 .note__title-bold {
   display: block;
-  font-size: clamp(3rem, 8vmin, 4.5rem);
+  font-size: clamp(1.85rem, 5vmin, 2.5rem);
   font-weight: 700;
   line-height: 1.1;
 }
 
 .note__title-bold::first-letter {
-  font-size: 1.5em;
+  font-size: 1.4em;
   vertical-align: baseline;
 }
 
@@ -445,21 +445,11 @@
   font-family: 'Amsterdam', cursive;
 }
 
-.note__title-sub-wrap {
-  display: block;
-  text-align: center;
-}
-
 .note__title-sub {
   display: block;
-  font-size: clamp(2.75rem, 7.5vmin, 3.75rem);
+  font-size: clamp(1.5rem, 4.2vmin, 2rem);
   font-weight: 700;
-  margin-top: 0.15em;
-}
-
-.note__title-sub--second {
-  display: block;
-  margin-top: 0.15em;
+  margin-top: 0.2em;
 }
 
 .note__body {
@@ -1646,11 +1636,11 @@
   }
 
   .note__title-bold {
-    font-size: clamp(2.5rem, 7vmin, 3.75rem);
+    font-size: clamp(1.65rem, 4.5vmin, 2.25rem);
   }
 
   .note__title-sub {
-    font-size: clamp(2.35rem, 6.5vmin, 3.25rem);
+    font-size: clamp(1.35rem, 3.8vmin, 1.85rem);
   }
 
   .note__body {

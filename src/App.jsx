@@ -567,7 +567,7 @@ function App() {
             exited && wordSearchPassed && part1ContentUnlocked && flipping ? (
               <div className="back-page note-page-turn">
                 <div className="note note-page-turn__under">
-                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub-wrap"><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></span></h2>
+                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
                   <div className="note__body">
                     <section className="note__col note__col--left">
                       <div className="note__top-section" aria-hidden="true" />
@@ -607,7 +607,7 @@ function App() {
                   </div>
                 </div>
                 <div className="note note--gate note--flip-out" aria-hidden="true">
-                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub-wrap"><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></span></h2>
+                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
                   <div className="note__gate-body">
                     <span className="note__gate-btn" style={{ pointerEvents: 'none' }}>Open</span>
                   </div>
@@ -616,13 +616,13 @@ function App() {
             ) : exited && wordSearchPassed && part1ContentUnlocked && flippingBack ? (
               <div className="back-page note-page-turn">
                 <div className="note note-page-turn__under">
-                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub-wrap"><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></span></h2>
+                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
                   <div className="note__gate-body">
                     <span className="note__gate-btn" style={{ pointerEvents: 'none' }}>Open</span>
                   </div>
                 </div>
                 <div className="note note--flip-out" aria-hidden="true" style={{ pointerEvents: 'none' }}>
-                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub-wrap"><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></span></h2>
+                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
                   <div className="note__body">
                     <section className="note__col note__col--left">
                       <div className="note__top-section" aria-hidden="true" />
@@ -665,7 +665,7 @@ function App() {
             ) : exited && wordSearchPassed && part1ContentUnlocked ? (
               <div className="back-page back-page--part1" onClick={handlePart1BackTap} role="button" tabIndex={0} aria-label="Triple-tap background to go back">
                 <div className="note" onClick={(e) => e.stopPropagation()}>
-                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub-wrap"><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></span></h2>
+                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
                   <div className="note__body">
                     <section className="note__col note__col--left">
                       <div className="note__top-section" aria-hidden="true" />
@@ -723,7 +723,7 @@ function App() {
             ) : exited && wordSearchPassed ? (
               <div className="back-page back-page--gate" onClick={handleGateBackTap} role="button" tabIndex={0} aria-label="Triple-tap background to go back">
                 <div className="note note--gate" onClick={(e) => e.stopPropagation()}>
-                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub-wrap"><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></span></h2>
+                  <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub">First date, take two</span></h2>
                   <div className="note__gate-body">
                     <button type="button" className="note__gate-btn" onClick={handleOpenClick}>
                       Open
