@@ -422,6 +422,10 @@ function Part1Note() {
         <section className="note__col note__col--left">
           <div className="note__top-section" aria-hidden="true" />
           <div className="note__section-block">
+            <h3 className="note__section-title">When?</h3>
+            <p className="note__section-content">Feb 7-8, 1:00 PM</p>
+          </div>
+          <div className="note__section-block">
             <h3 className="note__section-title">Where</h3>
             {(part1ImgUrls['megamall'] || part1ImgUrls['podium']) && (
               <div className="note__where-images">
@@ -569,6 +573,9 @@ function App() {
         r.envelopeKey = null
         if (envelopeKey === 1) {
           triggerExit()
+        } else if (envelopeKey === 2) {
+          // Show hint alert for Part 2
+          alert('Hint: 𓆝 𓆟 𓆞𓅨‧₊˚ ⋅ 𓐐𓎩 ‧₊˚ ⋅')
         }
         return
       }
