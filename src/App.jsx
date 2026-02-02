@@ -22,6 +22,9 @@ const part1ImgUrls = Object.fromEntries(
 )
 const part1Img = (name) => part1ImgUrls[name] || part1ImgUrls[name.replace(/\s+/g, '-')] || null
 
+/* Rounded squiggly border for the note card (viewBox 0 0 100 130) */
+const NOTE_BORDER_PATH = 'M 10,14 Q 26,8 42,12 Q 58,8 74,12 Q 90,10 92,16 Q 94,34 92,54 Q 94,74 92,94 Q 94,114 92,118 Q 76,124 60,120 Q 44,124 28,120 Q 12,126 10,118 Q 8,98 10,78 Q 8,58 10,38 Q 8,18 10,14 Z'
+
 function getRandomItem(array) {
   return array[Math.floor(Math.random() * array.length)]
 }
@@ -310,7 +313,7 @@ function WordSearch({ onComplete }) {
       <div className="word-search-card">
         <svg className="note__border word-search-card__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
           <path
-            d="M 4,6 C 24,4 44,7 64,5 C 84,7 96,6 96,6 C 97,40 96,74 96,108 C 97,122 96,124 96,124 C 76,122 56,123 36,122 C 16,123 4,124 4,124 C 5,82 4,48 4,6 Z"
+            d={NOTE_BORDER_PATH}
             fill="none"
             stroke="currentColor"
             strokeWidth="1.2"
@@ -558,7 +561,7 @@ function App() {
               <div className="back-page note-page-turn">
                 <div className="note note-page-turn__under">
                   <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
-                    <path d="M 4,6 C 24,4 44,7 64,5 C 84,7 96,6 96,6 C 97,40 96,74 96,108 C 97,122 96,124 96,124 C 76,122 56,123 36,122 C 16,123 4,124 4,124 C 5,82 4,48 4,6 Z" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
+                    <path d={NOTE_BORDER_PATH} fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
                   </svg>
                   <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub-wrap"><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></span></h2>
                   <div className="note__body">
@@ -601,7 +604,7 @@ function App() {
                 </div>
                 <div className="note note--gate note--flip-out" aria-hidden="true">
                   <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
-                    <path d="M 4,6 C 24,4 44,7 64,5 C 84,7 96,6 96,6 C 97,40 96,74 96,108 C 97,122 96,124 96,124 C 76,122 56,123 36,122 C 16,123 4,124 4,124 C 5,82 4,48 4,6 Z" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
+                    <path d={NOTE_BORDER_PATH} fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
                   </svg>
                   <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub-wrap"><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></span></h2>
                   <div className="note__gate-body">
@@ -613,7 +616,7 @@ function App() {
               <div className="back-page note-page-turn">
                 <div className="note note-page-turn__under">
                   <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
-                    <path d="M 4,6 C 24,4 44,7 64,5 C 84,7 96,6 96,6 C 97,40 96,74 96,108 C 97,122 96,124 96,124 C 76,122 56,123 36,122 C 16,123 4,124 4,124 C 5,82 4,48 4,6 Z" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
+                    <path d={NOTE_BORDER_PATH} fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
                   </svg>
                   <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub-wrap"><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></span></h2>
                   <div className="note__gate-body">
@@ -622,7 +625,7 @@ function App() {
                 </div>
                 <div className="note note--flip-out" aria-hidden="true" style={{ pointerEvents: 'none' }}>
                   <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
-                    <path d="M 4,6 C 24,4 44,7 64,5 C 84,7 96,6 96,6 C 97,40 96,74 96,108 C 97,122 96,124 96,124 C 76,122 56,123 36,122 C 16,123 4,124 4,124 C 5,82 4,48 4,6 Z" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
+                    <path d={NOTE_BORDER_PATH} fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
                   </svg>
                   <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub-wrap"><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></span></h2>
                   <div className="note__body">
@@ -669,7 +672,7 @@ function App() {
                 <div className="note" onClick={(e) => e.stopPropagation()}>
                   <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
                     <path
-                      d="M 4,6 C 24,4 44,7 64,5 C 84,7 96,6 96,6 C 97,40 96,74 96,108 C 97,122 96,124 96,124 C 76,122 56,123 36,122 C 16,123 4,124 4,124 C 5,82 4,48 4,6 Z"
+                      d={NOTE_BORDER_PATH}
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="1.2"
@@ -737,7 +740,7 @@ function App() {
                 <div className="note note--gate" onClick={(e) => e.stopPropagation()}>
                   <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
                     <path
-                      d="M 4,6 C 24,4 44,7 64,5 C 84,7 96,6 96,6 C 97,40 96,74 96,108 C 97,122 96,124 96,124 C 76,122 56,123 36,122 C 16,123 4,124 4,124 C 5,82 4,48 4,6 Z"
+                      d={NOTE_BORDER_PATH}
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="1.2"
