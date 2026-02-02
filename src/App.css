@@ -1456,7 +1456,7 @@
 
   /* Wavy line between title and “What are we gonna do?” – minimal gap below border */
   .note__title {
-    margin-bottom: 1.6rem !important;
+    margin-bottom: 0.6rem !important;
   }
 
   .note__title::after {
@@ -1695,7 +1695,7 @@
 
   /* iPhone 14 Pro Max (430px): align “take two” with “first date,” */
   .note__title-sub--second {
-    margin-left: 0.25em;
+    margin-left: 0.55em;
   }
 
   .note__body {
