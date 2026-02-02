@@ -423,7 +423,7 @@
 }
 
 .back-page--part1 .note__title {
-  margin-top: 1.75rem;
+  margin-top: 1.90rem;
 }
 
 .back-page--part1 .note__title-bold {
@@ -592,8 +592,8 @@
 }
 
 .note__where-img {
-  width: clamp(60px, 14vmin, 90px);
-  height: clamp(60px, 14vmin, 90px);
+  width: clamp(80px, 18vmin, 120px);
+  height: clamp(80px, 18vmin, 120px);
   object-fit: contain;
   flex-shrink: 0;
 }

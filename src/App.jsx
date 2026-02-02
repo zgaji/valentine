@@ -425,6 +425,9 @@ function Part1Note() {
             <h3 className="note__section-title">When?</h3>
             <p className="note__section-content">Feb 7-8, 1:00 PM</p>
           </div>
+          <svg className="note__divider" viewBox="0 0 20 200" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M 10 0 Q 4 25 10 50 Q 16 75 10 100 Q 4 125 10 150 Q 16 175 10 200" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
           <div className="note__section-block">
             <h3 className="note__section-title">Where</h3>
             {(part1ImgUrls['megamall'] || part1ImgUrls['podium']) && (
@@ -438,6 +441,9 @@ function Part1Note() {
               </div>
             )}
           </div>
+          <svg className="note__divider" viewBox="0 0 20 200" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M 10 0 Q 4 25 10 50 Q 16 75 10 100 Q 4 125 10 150 Q 16 175 10 200" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
           <div className="note__activities-block">
             <h3 className="note__section-title">What are we gonna do?</h3>
             <div className="note__activities-grid">
