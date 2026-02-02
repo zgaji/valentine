@@ -409,8 +409,8 @@
 
 /* Part 1 content page: fixed height, content scrolls inside note */
 .back-page--part1 .note {
-  height: min(90vh, 546px);
-  max-height: min(90vh, 546px);
+  height: min(90vh, 620px);
+  max-height: min(90vh, 620px);
   overflow: hidden;
   aspect-ratio: auto;
 }
@@ -1472,7 +1472,7 @@
     padding-bottom: 3rem;
   }
 
-  /* Horizontal wavy divider between “What are we gonna do?” and “What do we wear?” */
+  /* Horizontal wavy divider between “What are we gonna do?” and “What to wear?” */
   .note__divider {
     width: 100%;
     min-width: 100%;
@@ -1735,7 +1735,7 @@
     min-height: 0;
   }
 
-  /* Horizontal wavy line below “What do we wear?” title (mobile) */
+  /* Horizontal wavy line below “What to wear?” title (mobile) */
   .note__col--right .note__section-title {
     margin-bottom: 0.75rem;
     padding-bottom: 0.75rem;

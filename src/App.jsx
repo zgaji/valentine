@@ -571,6 +571,14 @@ function App() {
                   <div className="note__body">
                     <section className="note__col note__col--left">
                       <div className="note__top-section" aria-hidden="true" />
+                      <div className="note__section-block">
+                        <h3 className="note__section-title">When?</h3>
+                        <p className="note__section-content"></p>
+                      </div>
+                      <div className="note__section-block">
+                        <h3 className="note__section-title">Where</h3>
+                        <p className="note__section-content"></p>
+                      </div>
                       <div className="note__activities-block">
                         <h3 className="note__section-title">What are we gonna do?</h3>
                         <div className="note__activities-grid">
@@ -600,7 +608,7 @@ function App() {
                       <path d="M 10 0 Q 4 25 10 50 Q 16 75 10 100 Q 4 125 10 150 Q 16 175 10 200" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     <section className="note__col note__col--right">
-                      <h3 className="note__section-title">What do we wear?</h3>
+                      <h3 className="note__section-title">What to wear?</h3>
                       {part1ImgUrls['clothes'] && <img src={part1ImgUrls['clothes']} alt="" className="note__clothes-img" />}
                       <p className="note__comfy">anything comfy!</p>
                     </section>
@@ -626,6 +634,14 @@ function App() {
                   <div className="note__body">
                     <section className="note__col note__col--left">
                       <div className="note__top-section" aria-hidden="true" />
+                      <div className="note__section-block">
+                        <h3 className="note__section-title">When?</h3>
+                        <p className="note__section-content"></p>
+                      </div>
+                      <div className="note__section-block">
+                        <h3 className="note__section-title">Where</h3>
+                        <p className="note__section-content"></p>
+                      </div>
                       <div className="note__activities-block">
                         <h3 className="note__section-title">What are we gonna do?</h3>
                         <div className="note__activities-grid">
@@ -655,7 +671,7 @@ function App() {
                       <path d="M 10 0 Q 4 25 10 50 Q 16 75 10 100 Q 4 125 10 150 Q 16 175 10 200" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     <section className="note__col note__col--right">
-                      <h3 className="note__section-title">What do we wear?</h3>
+                      <h3 className="note__section-title">What to wear?</h3>
                       {part1ImgUrls['clothes'] && <img src={part1ImgUrls['clothes']} alt="" className="note__clothes-img" />}
                       <p className="note__comfy">anything comfy!</p>
                     </section>
@@ -669,6 +685,14 @@ function App() {
                   <div className="note__body">
                     <section className="note__col note__col--left">
                       <div className="note__top-section" aria-hidden="true" />
+                      <div className="note__section-block">
+                        <h3 className="note__section-title">When?</h3>
+                        <p className="note__section-content"></p>
+                      </div>
+                      <div className="note__section-block">
+                        <h3 className="note__section-title">Where</h3>
+                        <p className="note__section-content"></p>
+                      </div>
                       <div className="note__activities-block">
                         <h3 className="note__section-title">What are we gonna do?</h3>
                         <div className="note__activities-grid">
@@ -711,7 +735,7 @@ function App() {
                       />
                     </svg>
                     <section className="note__col note__col--right">
-                      <h3 className="note__section-title">What do we wear?</h3>
+                      <h3 className="note__section-title">What to wear?</h3>
                       {part1ImgUrls['clothes'] && (
                         <img src={part1ImgUrls['clothes']} alt="" className="note__clothes-img" />
                       )}
