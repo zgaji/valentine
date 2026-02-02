@@ -347,6 +347,27 @@
 
 .back-page--word-search {
   align-items: center;
+  position: relative;
+}
+
+/* Temporary skip button – remove before release */
+.word-search-skip-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  color: #8B2E3C;
+  background: rgba(253, 246, 246, 0.95);
+  border: 1px solid #8B2E3C;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.word-search-skip-btn:hover {
+  background: #f5e0e4;
 }
 
 @keyframes back-page-in {
@@ -1435,7 +1456,7 @@
 
   /* Wavy line between title and “What are we gonna do?” – minimal gap below border */
   .note__title {
-    margin-bottom: 2.6rem !important;
+    margin-bottom: 1.6rem !important;
   }
 
   .note__title::after {
@@ -1674,7 +1695,7 @@
 
   /* iPhone 14 Pro Max (430px): align “take two” with “first date,” */
   .note__title-sub--second {
-    margin-left: 0.18em;
+    margin-left: 0.25em;
   }
 
   .note__body {

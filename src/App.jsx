@@ -763,6 +763,14 @@ function App() {
                 aria-label="Triple-tap background to go back"
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleWordSearchBackTap(e); } }}
               >
+                <button
+                  type="button"
+                  className="word-search-skip-btn"
+                  onClick={(e) => { e.stopPropagation(); setWordSearchPassed(true); }}
+                  aria-label="Skip word search (temporary)"
+                >
+                  Skip (temp)
+                </button>
                 <WordSearch onComplete={() => setWordSearchPassed(true)} />
               </div>
             ) : (
