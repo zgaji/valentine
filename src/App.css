@@ -491,7 +491,7 @@
 
 .note__top-section {
   flex: 0 0 auto;
-  min-height: 3rem;
+  min-height: 0.5rem;
 }
 
 .note__activities-block {
