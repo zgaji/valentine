@@ -25,6 +25,23 @@ const part1Img = (name) => part1ImgUrls[name] || part1ImgUrls[name.replace(/\s+/
 /* Hand-drawn wavy border path (organic squiggly rectangle, viewBox 0 0 100 130) */
 const NOTE_BORDER_PATH = 'M 6,6 Q 14,3 23,7 Q 32,4 41,8 Q 50,3 59,7 Q 68,4 77,7 Q 86,3 94,6 Q 98,16 95,30 Q 97,44 94,58 Q 98,72 95,86 Q 97,100 94,114 Q 98,124 95,124 Q 85,127 76,123 Q 67,126 58,124 Q 49,127 40,124 Q 31,127 22,124 Q 13,126 6,124 Q 3,110 6,94 Q 2,78 6,62 Q 3,46 6,30 Q 2,14 6,6 Z'
 
+/* Decorative bow at top center (double-line style, same viewBox) */
+const NOTE_BOW_PATH = 'M 50,6.5 Q 34,1 50,6.5 M 50,6.5 Q 66,1 50,6.5 M 34,1 Q 32,5 34,8 M 66,1 Q 68,5 66,8'
+
+const strokeProps = { fill: 'none', stroke: 'currentColor', strokeWidth: '1.15', strokeLinejoin: 'round', strokeLinecap: 'round' }
+
+function NoteBorder({ className }) {
+  return (
+    <svg className={className} viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
+      <path d={NOTE_BORDER_PATH} {...strokeProps} />
+      <g transform="translate(50,65) scale(0.965) translate(-50,-65)">
+        <path d={NOTE_BORDER_PATH} {...strokeProps} />
+      </g>
+      <path d={NOTE_BOW_PATH} {...strokeProps} strokeWidth="1.05" />
+    </svg>
+  )
+}
+
 function getRandomItem(array) {
   return array[Math.floor(Math.random() * array.length)]
 }
@@ -311,16 +328,7 @@ function WordSearch({ onComplete }) {
         <Notification type={notification} onClose={() => setNotification(null)} />
       )}
       <div className="word-search-card">
-        <svg className="note__border word-search-card__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
-          <path
-            d={NOTE_BORDER_PATH}
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.2"
-            strokeLinejoin="round"
-            strokeLinecap="round"
-          />
-        </svg>
+        <NoteBorder className="note__border word-search-card__border" />
         <p className="word-search-counter">Finish the game to unlock</p>
         <p className="word-search-progress">Word Find: {foundWords.size}/{WORD_SEARCH_LIST.length}</p>
         <div
@@ -560,9 +568,7 @@ function App() {
             exited && wordSearchPassed && part1ContentUnlocked && flipping ? (
               <div className="back-page note-page-turn">
                 <div className="note note-page-turn__under">
-                  <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
-                    <path d={NOTE_BORDER_PATH} fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
-                  </svg>
+                  <NoteBorder className="note__border" />
                   <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub-wrap"><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></span></h2>
                   <div className="note__body">
                     <section className="note__col note__col--left">
@@ -603,9 +609,7 @@ function App() {
                   </div>
                 </div>
                 <div className="note note--gate note--flip-out" aria-hidden="true">
-                  <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
-                    <path d={NOTE_BORDER_PATH} fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
-                  </svg>
+                  <NoteBorder className="note__border" />
                   <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub-wrap"><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></span></h2>
                   <div className="note__gate-body">
                     <span className="note__gate-btn" style={{ pointerEvents: 'none' }}>Open</span>
@@ -615,18 +619,14 @@ function App() {
             ) : exited && wordSearchPassed && part1ContentUnlocked && flippingBack ? (
               <div className="back-page note-page-turn">
                 <div className="note note-page-turn__under">
-                  <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
-                    <path d={NOTE_BORDER_PATH} fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
-                  </svg>
+                  <NoteBorder className="note__border" />
                   <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub-wrap"><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></span></h2>
                   <div className="note__gate-body">
                     <span className="note__gate-btn" style={{ pointerEvents: 'none' }}>Open</span>
                   </div>
                 </div>
                 <div className="note note--flip-out" aria-hidden="true" style={{ pointerEvents: 'none' }}>
-                  <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
-                    <path d={NOTE_BORDER_PATH} fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
-                  </svg>
+                  <NoteBorder className="note__border" />
                   <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub-wrap"><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></span></h2>
                   <div className="note__body">
                     <section className="note__col note__col--left">
@@ -670,16 +670,7 @@ function App() {
             ) : exited && wordSearchPassed && part1ContentUnlocked ? (
               <div className="back-page back-page--part1" onClick={handlePart1BackTap} role="button" tabIndex={0} aria-label="Triple-tap background to go back">
                 <div className="note" onClick={(e) => e.stopPropagation()}>
-                  <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
-                    <path
-                      d={NOTE_BORDER_PATH}
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.2"
-                      strokeLinejoin="round"
-                      strokeLinecap="round"
-                    />
-                  </svg>
+                  <NoteBorder className="note__border" />
                   <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub-wrap"><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></span></h2>
                   <div className="note__body">
                     <section className="note__col note__col--left">
@@ -738,16 +729,7 @@ function App() {
             ) : exited && wordSearchPassed ? (
               <div className="back-page back-page--gate" onClick={handleGateBackTap} role="button" tabIndex={0} aria-label="Triple-tap background to go back">
                 <div className="note note--gate" onClick={(e) => e.stopPropagation()}>
-                  <svg className="note__border" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true">
-                    <path
-                      d={NOTE_BORDER_PATH}
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.2"
-                      strokeLinejoin="round"
-                      strokeLinecap="round"
-                    />
-                  </svg>
+                  <NoteBorder className="note__border" />
                   <h2 className="note__title"><span className="note__title-bold">Part <span className="note__title-num">I</span>:</span><span className="note__title-sub-wrap"><span className="note__title-sub">First date,</span><span className="note__title-sub note__title-sub--second">take two</span></span></h2>
                   <div className="note__gate-body">
                     <button type="button" className="note__gate-btn" onClick={handleOpenClick}>
