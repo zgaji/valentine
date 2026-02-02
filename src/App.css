@@ -386,12 +386,13 @@
   }
 }
 
+/* Note: original border proportions (100:130), same size for gate and Part 1 */
 .note {
   position: relative;
-  width: 90vw;
-  min-height: min(90vh, 680px);
+  width: min(90vw, 420px);
+  max-height: min(90vh, 546px);
   height: auto;
-  max-height: none;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   overflow: visible;
@@ -403,6 +404,22 @@
   background-position: center, center;
   color: #8B2E3C;
   box-shadow: 0 8px 32px rgba(139, 46, 60, 0.12);
+  aspect-ratio: 100 / 130;
+}
+
+/* Part 1 content page: fixed height, content scrolls inside note */
+.back-page--part1 .note {
+  height: min(90vh, 546px);
+  max-height: min(90vh, 546px);
+  overflow: hidden;
+  aspect-ratio: auto;
+}
+
+.back-page--part1 .note__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .note__border {
@@ -649,11 +666,9 @@
   text-align: center;
 }
 
-/* Gate page (first page) – title centered in note, no divider, same size as content note */
+/* Gate page (first page) – title centered in note, no divider, same size as border */
 .note--gate {
   justify-content: center;
-  width: 90vw;
-  min-height: min(90vh, 680px);
 }
 
 .note--gate .note__title {
@@ -1682,6 +1697,12 @@
     flex-direction: column;
     padding: 0 1.5rem 3.5rem;
     flex: 0 0 auto;
+  }
+
+  .back-page--part1 .note__body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
   }
 
   .note__col {
