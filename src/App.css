@@ -649,9 +649,11 @@
   text-align: center;
 }
 
-/* Gate page (first page) – title centered in note, no divider */
+/* Gate page (first page) – title centered in note, no divider, same size as content note */
 .note--gate {
   justify-content: center;
+  width: 90vw;
+  min-height: min(90vh, 680px);
 }
 
 .note--gate .note__title {
@@ -673,12 +675,12 @@
 
 .note__gate-btn {
   font-family: 'Homemade Apple', cursive;
-  font-size: clamp(1.25rem, 3.5vmin, 1.75rem);
+  font-size: clamp(0.95rem, 2.6vmin, 1.25rem);
   color: #8B2E3C;
   background: transparent;
-  border: 2px solid #8B2E3C;
+  border: 1.5px solid #8B2E3C;
   border-radius: 999px;
-  padding: 0.6rem 1.75rem;
+  padding: 0.4rem 1.15rem;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
 }
