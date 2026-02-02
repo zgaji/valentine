@@ -398,7 +398,7 @@
   position: relative;
   margin: 0 0 0 -0.6rem;
   padding: 2.75rem 3rem 0.5rem 0.75rem;
-  margin-bottom: 3rem !important;
+  margin-bottom: 2.6rem !important;
   font-family: 'Amsterdam', cursive;
   font-weight: 700;
   color: #8B2E3C;
@@ -453,7 +453,7 @@
 .note__title-sub--second {
   display: block;
   margin-top: 0.15em;
-  margin-left: -0.22em;
+  margin-left: 0.18em;
 }
 
 .note__body {
@@ -1433,9 +1433,9 @@
     padding-bottom: 2rem;
   }
 
-  /* Wavy line between title and “What are we gonna do?” – tight gap below border */
+  /* Wavy line between title and “What are we gonna do?” – minimal gap below border */
   .note__title {
-    margin-bottom: 3rem !important;
+    margin-bottom: 2.6rem !important;
   }
 
   .note__title::after {
@@ -1653,7 +1653,7 @@
   .note__title {
     margin-left: -0.5rem;
     padding: 2.25rem 2.5rem 0.75rem 0.5rem;
-    margin-bottom: 3rem !important;
+    margin-bottom: 2.6rem !important;
   }
 
   .note__title::after {
@@ -1674,7 +1674,7 @@
 
   /* iPhone 14 Pro Max (430px): align “take two” with “first date,” */
   .note__title-sub--second {
-    margin-left: -0.22em;
+    margin-left: 0.18em;
   }
 
   .note__body {
