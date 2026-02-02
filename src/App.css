@@ -420,8 +420,8 @@
 
 .note__title {
   position: relative;
-  margin: 10rem 0 0.5rem;
-  padding: 0 1.5rem 2.5rem;
+  margin: 10rem 0 0.2rem;
+  padding: 0 1.5rem 3.5rem;
   font-family: 'Amsterdam', cursive;
   font-weight: 700;
   color: #8B2E3C;
@@ -464,7 +464,7 @@
   display: block;
   font-size: clamp(1.5rem, 4.2vmin, 2rem);
   font-weight: 700;
-  margin-top: 0.6em;
+  margin-top: 0.8em;
 }
 
 .note__body {
