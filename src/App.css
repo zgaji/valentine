@@ -422,6 +422,10 @@
   -webkit-overflow-scrolling: touch;
 }
 
+.back-page--part1 .note__title {
+  margin-top: 1.5rem;
+}
+
 .note__border {
   position: absolute;
   inset: 0;
