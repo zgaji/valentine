@@ -22,8 +22,8 @@ const part1ImgUrls = Object.fromEntries(
 )
 const part1Img = (name) => part1ImgUrls[name] || part1ImgUrls[name.replace(/\s+/g, '-')] || null
 
-/* Rounded squiggly border for the note card (viewBox 0 0 100 130) */
-const NOTE_BORDER_PATH = 'M 10,14 Q 26,8 42,12 Q 58,8 74,12 Q 90,10 92,16 Q 94,34 92,54 Q 94,74 92,94 Q 94,114 92,118 Q 76,124 60,120 Q 44,124 28,120 Q 12,126 10,118 Q 8,98 10,78 Q 8,58 10,38 Q 8,18 10,14 Z'
+/* Hand-drawn wavy border path (organic squiggly rectangle, viewBox 0 0 100 130) */
+const NOTE_BORDER_PATH = 'M 6,6 Q 14,3 23,7 Q 32,4 41,8 Q 50,3 59,7 Q 68,4 77,7 Q 86,3 94,6 Q 98,16 95,30 Q 97,44 94,58 Q 98,72 95,86 Q 97,100 94,114 Q 98,124 95,124 Q 85,127 76,123 Q 67,126 58,124 Q 49,127 40,124 Q 31,127 22,124 Q 13,126 6,124 Q 3,110 6,94 Q 2,78 6,62 Q 3,46 6,30 Q 2,14 6,6 Z'
 
 function getRandomItem(array) {
   return array[Math.floor(Math.random() * array.length)]
