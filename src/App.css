@@ -350,6 +350,11 @@
   position: relative;
 }
 
+.back-page--gate,
+.back-page--part1 {
+  align-items: center;
+}
+
 /* Temporary skip button – remove before release */
 .word-search-skip-btn {
   position: absolute;
@@ -644,7 +649,20 @@
   text-align: center;
 }
 
-/* Gate page – after word search, before Part 1 content */
+/* Gate page (first page) – title centered in note, no divider */
+.note--gate {
+  justify-content: center;
+}
+
+.note--gate .note__title {
+  margin: 0 0 1rem;
+  padding: 0 1.5rem;
+}
+
+.note--gate .note__title::after {
+  display: none;
+}
+
 .note--gate .note__gate-body {
   flex: 1;
   display: flex;
